@@ -1,0 +1,487 @@
+@use 'variables';
+
+/* Core styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Variables */
+:root {
+  --bg-09: #1d272c;
+  --bg-10: #263238;
+  --bg-11: #36464f;
+  --bg-12: #12191d;
+  --bg-02: #f4f4f4;
+  --bg-03: #e0e0e0;
+  --bg-04: #bdbdbd;
+  --border: #c6d2d9;
+  --blue: #03a9f4;
+  --red: #ff4d4f;
+  --orange: #ffa940;
+  --green: #52c41a;
+  --dark-text: #333;
+  --light-text: #fff;
+  --lighter-text: #666;
+  --middle-light-text: #999;
+  --input-background: #fff;
+  --entries-header: #f5f5f5;
+  --tags: #e6f7ff;
+  --blue-tag: #1890ff;
+}
+
+/* Dark mode styles */
+body.clockify-dark-mode,
+.clockify-dark-mode {
+  background-color: var(--bg-09);
+  color: var(--light-text);
+}
+
+/* Header styles */
+.header_and_timer {
+  background-color: var(--bg-09);
+}
+
+/* Timer styles */
+.start-timer {
+  background-color: var(--bg-11);
+  border: 1px solid var(--bg-12);
+}
+
+.start-timer_description_grey {
+  color: var(--bg-04);
+}
+
+.start-timer_description {
+  color: var(--bg-02);
+}
+
+.start-timer_description-input {
+  background-color: var(--bg-11);
+  color: var(--bg-02);
+}
+
+.start-timer_description-input::placeholder,
+.start-timer_placeholder {
+  color: var(--bg-04);
+}
+
+/* Dropdown styles */
+.dropdown-menu {
+  background-color: var(--bg-12);
+  box-shadow: none;
+}
+
+.dropdown-header,
+.dropdown-item,
+.dropdown-subitem {
+  color: var(--bg-04);
+}
+
+.dropdown-divider {
+  border-bottom: 1px dotted var(--bg-10);
+}
+
+/* Rectangle styles */
+.rectangle {
+  background-color: var(--bg-12);
+  box-shadow: none;
+}
+
+/* Time entries list styles */
+.time-entries-list {
+  border: 1px solid var(--bg-12);
+}
+
+.time-entries-list-time {
+  background-color: var(--bg-12);
+  border-bottom: 1px solid var(--bg-12);
+}
+
+.time-entries-list-total,
+.time-entries-list-day {
+  color: var(--bg-04);
+}
+
+.time-entries-list-total-time {
+  color: var(--bg-03);
+}
+
+/* Time entry styles */
+.time-entry,
+.time-entry-locked {
+  background: var(--bg-11);
+  border: 1px solid var(--bg-12);
+}
+
+.time-entry--collapsed {
+  background-color: #36464f;
+}
+
+.time-entry-group-number {
+  background-color: #12191d;
+  color: #90a4ae;
+}
+
+.time-entry-group-number:hover {
+  background-color: #37474f;
+}
+
+/* Week header styles */
+.week-header {
+  color: var(--light-text);
+}
+
+.week-header--total {
+  color: var(--light-text);
+}
+
+.week-header--total--time {
+  color: var(--light-text);
+}
+
+.week-header--total--label {
+  color: #90a4ae;
+}
+
+/* Description styles */
+.description {
+  color: var(--bg-02);
+}
+
+.time-entry__task-name,
+.time-entry__client-name,
+.time-entry__right-side--duration {
+  color: var(--bg-03);
+}
+
+.no-description {
+  color: var(--bg-04);
+}
+
+/* Dropdown hover styles */
+.dropdown-item:hover,
+.dropdown-subitem:hover {
+  background: var(--bg-10);
+}
+
+/* Workspace list styles */
+.workspace-list-item:hover {
+  background-color: var(--bg-10);
+}
+
+.workspace-list-dropdown {
+  background: var(--bg-12);
+  box-shadow: 0 5px 7px #000;
+}
+
+.workspace-list-item__name {
+  color: var(--bg-04);
+}
+
+/* Duration styles */
+.duration-divider {
+  border-left: 1px dotted var(--bg-12);
+  background-color: var(--bg-12);
+}
+
+/* Project item styles */
+ul.project-item:hover {
+  background-color: var(--bg-10);
+}
+
+li.project-item-name {
+  color: white;
+}
+
+.project-list-name {
+  color: var(--bg-04);
+}
+
+.project-name {
+  color: var(--bg-04);
+}
+
+/* Task item styles */
+.task-item {
+  color: var(--bg-04);
+  background-color: var(--bg-10);
+}
+
+.task-item:hover {
+  background-color: var(--bg-09);
+}
+
+/* Tag list styles */
+.tag-list-item {
+  color: var(--bg-04);
+}
+
+.tag-list-item--row:hover {
+  background-color: var(--bg-10);
+}
+
+.tag-list-selected-item {
+  color: var(--bg-03);
+}
+
+/* Projects list styles */
+.projects-list__create-task {
+  background-color: var(--bg-10);
+}
+
+.projects-list__create-project,
+.tag-list__create-tag,
+.client-list__create-client,
+.client-list-dropdown {
+  background-color: var(--bg-12);
+  box-shadow: none;
+}
+
+/* Create project/task styles */
+.create-project,
+.create-task {
+  background-color: var(--bg-09);
+}
+
+.create-project__title {
+  color: var(--bg-03);
+}
+
+/* Create project/task input styles */
+.create-project__project-name,
+.create-task__task-name {
+  border: 1px solid var(--bg-12);
+  background-color: var(--bg-10);
+  color: var(--bg-03);
+}
+
+.create-project__project-name::placeholder,
+.create-task__task-name::placeholder {
+  color: var(--bg-04);
+}
+
+.create-project__project-name:focus,
+.create-task__task-name:focus {
+  outline: none;
+  border: 2px solid #0f3beb;
+  border-radius: 5px;
+}
+
+/* Color picker styles */
+.color-picker__title,
+.create-project__billable-title,
+.create-project__public-title {
+  color: var(--bg-04);
+}
+
+.create-project__divider {
+  border-bottom: 1px dotted var(--bg-12);
+}
+
+/* Client list styles */
+.client-list-button {
+  border: 1px solid var(--bg-12);
+  background-color: var(--bg-10);
+}
+
+.client-list-name {
+  color: var(--bg-04);
+}
+
+.client-list-arrow {
+  content: url('/assets/images/arrow-dark-mode.png');
+}
+
+.client-list-input {
+  background: var(--bg-12);
+}
+
+.client-list-filter {
+  background-color: var(--bg-10);
+  border: none;
+}
+
+.client-list-filter::placeholder {
+  color: var(--bg-03);
+}
+
+.client-list-client {
+  color: var(--bg-04);
+}
+
+/* Client list create form styles */
+.client-list__create-form {
+  background-color: var(--bg-09);
+}
+
+.client-list__create-form--open {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.client-list__create-form--divider {
+  border-bottom: 1px dotted var(--bg-12);
+}
+
+.client-list__create-form--title {
+  color: var(--bg-03);
+}
+
+.client-list__create-form--client-name {
+  border: 1px solid var(--bg-12);
+  background-color: var(--bg-10);
+  color: var(--bg-03);
+}
+
+.client-list__create-form--client-name::placeholder {
+  color: var(--bg-04);
+}
+
+/* Tag list styles */
+.tag-list--not_tags {
+  color: #8c9fa9;
+}
+
+.tag-list__create-form,
+.popup-modal {
+  background-color: var(--bg-09);
+}
+
+.tag-list__create-form--open,
+.popup-modal--open {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tag-list__create-form--divider,
+.popup-modal--divider {
+  border-bottom: 1px dotted var(--bg-12);
+}
+
+.tag-list__create-form--title,
+.popup-modal--title,
+p {
+  color: var(--bg-03);
+}
+
+.tag-list__create-form--tag-name,
+.popup-modal--tag-name {
+  border: 1px solid var(--bg-12);
+  background-color: var(--bg-10);
+  color: var(--bg-03);
+}
+
+.tag-list__create-form--tag-name::placeholder,
+.popup-modal--tag-name::placeholder {
+  color: var(--bg-04);
+}
+
+/* Clockify modal styles */
+.clockify-modal-content {
+  background-color: #37474f;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cl-modal-title,
+.custom-field-link-label {
+  color: var(--light-text);
+}
+
+.custom-field-link {
+  background-color: #263238;
+  color: var(--light-text);
+}
+
+.cl-close {
+  background: none;
+}
+
+.cl-close .clockify-close {
+  background: none;
+}
+
+.cl-modal-header {
+  border-bottom: 1px dotted #12191d;
+}
+
+.cl-modal-footer {
+  border-top: 1px dotted #12191d;
+}
+
+/* App version styles */
+.app-version {
+  color: var(--bg-03);
+}
+
+/* Error styles */
+.clockify-error {
+  color: red;
+  font-size: 14px;
+}
+
+/* Loading entries styles */
+.loading-entries {
+  color: var(--light-text);
+}
+
+/* Autocomplete styles */
+.autocomplete-dropdown-item {
+  color: #90a4ae;
+  background-color: #1d272c;
+}
+
+.autocomplete-dropdown-item:hover {
+  background-color: #263238;
+}
+
+.autocomplete-dropdown-item__tag {
+  color: #90a4ae;
+  background: #12191d;
+}
+
+.autocomplete-dropdown-item__tag:hover {
+  background: #37474f;
+}
+
+.react-autocomplete > div {
+  background: #1d272c !important;
+}
+
+/* Edit form styles */
+.edit-form__break-label {
+  background: var(--bg-10);
+  color: var(--bg-03);
+}
+
+/* Integration popup styles */
+.clockify-integration-popup {
+  color: var(--light-text);
+}
+
+/* Custom field styles */
+div.custom-field-ta {
+  background-color: var(--bg-09) !important;
+}
+
+/* Manual entry header text styles */
+.clockify-manual-entry-header-text {
+  color: #f4f4f4;
+}
+
+/* Notification styles */
+.notification {
+  color: #c6d2d9 !important;
+}
+
+.notification .notification-title {
+  color: #c6d2d9 !important;
+}
+
+.notification .notification-message {
+  color: #c6d2d9 !important;
+}
+
+.notification:hover {
+  background-color: #263238 !important;
+} 
