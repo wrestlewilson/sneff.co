@@ -1,0 +1,833 @@
+/* Clockify Integration Styles */
+.clockify-integration-popup {
+    background: #eff4f7;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    width: 350px;
+    position: fixed;
+    top: 3vh;
+    right: 3vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    z-index: 2147483647 !important;
+    color: #333;
+    font-size: 14px;
+}
+
+.clockify-integration-popup *::selection {
+    background: highlight;
+    color: highlighttext;
+}
+
+.clockify-integration-popup img,
+.clockify-integration-popup svg {
+    vertical-align: inherit;
+}
+
+.clockify-integration-popup input:not([type='image']) {
+    box-sizing: border-box;
+}
+
+.clockify-integration-popup input,
+.clockify-integration-popup textarea {
+    box-shadow: none;
+}
+
+.clockify-integration-popup label {
+    display: inline-block !important;
+    font-weight: normal;
+}
+
+.clockify-integration-popup span {
+    float: none;
+}
+
+.clockify-integration-popup .-close-icon {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+}
+
+.clockify-integration-popup .-header {
+    height: 20px;
+    width: fit-content;
+}
+
+.clockify-integration-popup .toaster__container {
+    position: absolute !important;
+}
+
+.clockify-integration-popup .projects-list {
+    display: block;
+}
+
+.clockify-integration-popup .ant-switch {
+    min-height: auto;
+}
+
+/* Clockify Button Styles */
+#clockifyButton,
+#clockifySmallButton {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#clockifyButton img,
+#clockifySmallButton img,
+#clockifyButton svg,
+#clockifySmallButton svg {
+    vertical-align: inherit;
+}
+
+#clockifyButton {
+    display: flex !important;
+    align-items: center !important;
+}
+
+#clockifyButton > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center;
+}
+
+#clockifyButton > div > span {
+    margin-left: 5px;
+}
+
+.clockify-button-active {
+    color: #03a9f4;
+}
+
+.clockify-button-inactive {
+    color: #444444;
+}
+
+.clockify-button-active-span,
+.clockify-button-inactive-span {
+    margin-left: 5px;
+    float: none;
+    position: relative;
+}
+
+.clockify-input {
+    border: 1px solid #c6d2d9;
+    border-radius: 2px;
+    width: 136px;
+    padding-left: 4px;
+    height: 30px;
+    font-size: 14px;
+}
+
+.clockify-input:focus,
+.clockify-input:hover {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #03a9f4;
+    background-color: #fff;
+}
+
+.clockify-input.clockify-input-default {
+    border-color: #c6d2d9;
+    color: #333;
+    background-color: #fff;
+}
+
+.clockify-input.clockify-input-success {
+    border-color: #cde9ce;
+    color: #285b2a;
+    background-color: #dbefdc;
+}
+
+.clockify-input.clockify-input-error {
+    border-color: #fccac7;
+    color: #7f231c;
+    background-color: #fdd9d7;
+}
+
+.clockify-manual-entry-header-text {
+    margin-left: 20px;
+}
+
+.clockify-trello-card {
+    .clockifyButton {
+        visibility: hidden;
+    }
+
+    &:hover {
+        .clockifyButton {
+            visibility: visible;
+        }
+    }
+
+    &:not(:hover) {
+        .clockifyButton {
+            visibility: hidden;
+
+            &.active {
+                visibility: visible;
+            }
+
+            &:not(.active) {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+.clockify-copy-as-entry-container {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    width: fit-content;
+    color: rgb(68, 68, 68);
+}
+
+/* Toast Container */
+.toaster__container {
+    position: absolute !important;
+}
+
+/* Project List */
+.projects-list {
+    display: block;
+}
+
+/* Ant Switch */
+.ant-switch {
+    min-height: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .clockify-integration-popup {
+        width: 90%;
+        right: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .clockify-integration-popup {
+        width: 95%;
+        right: 2.5%;
+    }
+}
+
+/* Modal Styles */
+.cl-modal-header {
+    align-items: center !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 20px !important;
+    border-bottom: 1px solid #c6d2d9;
+    border-top-left-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+}
+
+.cl-modal-title {
+    font-size: 24px !important;
+    font-weight: 100 !important;
+    line-height: 36px !important;
+    color: rgb(102, 102, 102);
+    margin: 0 !important;
+}
+
+.cl-modal-body {
+    position: relative !important;
+    display: flex !important;
+    padding: 21px !important;
+    align-items: center !important;
+}
+
+.cl-modal-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    padding: 20px !important;
+    border-top: 1px solid #c6d2d9;
+    border-bottom-right-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+}
+
+.clockify-cancel {
+    color: #2196f3 !important;
+}
+
+.clockify-cancel:hover {
+    text-decoration: underline;
+}
+
+.clockify-save {
+    color: white;
+    background-color: #2196f3 !important;
+    margin-left: 30px;
+    padding: 10px;
+    min-width: 67px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.clockify-save--disabled {
+    opacity: 0.65;
+    cursor: default !important;
+}
+
+a.clockify-cancel,
+a.clockify-save {
+    cursor: pointer;
+}
+
+/* Custom Radio Button */
+.checkmark {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 21px !important;
+    width: 21px !important;
+    border: 1px solid gray !important;
+    border-radius: 50% !important;
+}
+
+.cf-container:hover input ~ .checkmark {
+    background-color: #ccc !important;
+}
+
+.cf-container input:checked ~ .checkmark {
+    background-color: #2196f3 !important;
+}
+
+.checkmark:after {
+    content: '' !important;
+    position: absolute !important;
+    display: none !important;
+}
+
+.cf-container input:checked ~ .checkmark:after {
+    display: block !important;
+}
+
+.cf-container .checkmark:after {
+    top: 6px !important;
+    left: 7px !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: white !important;
+}
+
+/* Required Fields */
+.required-fields {
+    text-align: center;
+}
+
+.required-fields button {
+    width: 105px;
+    height: 45px;
+    background-color: var(--red);
+    color: #ffffff;
+    border: 1px solid var(--red);
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.required-fields span {
+    display: block;
+    margin: 50px;
+    font-size: 17px;
+}
+
+/* Toast Container */
+.toaster__container {
+    position: fixed;
+    width: calc(100% - 25px);
+    left: 15px;
+    bottom: 15px;
+    z-index: 1112;
+}
+
+.toaster__message--container_success,
+.toaster__message--container_info,
+.toaster__message--container_error {
+    padding: 15px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    color: var(--input-background);
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 16px;
+    position: relative;
+    bottom: 15px;
+    left: 0;
+}
+
+.toaster__message--container_success {
+    background-color: var(--green);
+}
+
+.toaster__message--container_error {
+    background-color: var(--red);
+}
+
+.toaster__message--container_info {
+    background-color: var(--orange);
+}
+
+@keyframes toaster-fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 15px;
+        opacity: 1;
+    }
+}
+
+@keyframes toaster-fadeout {
+    from {
+        left: 0;
+        opacity: 1;
+    }
+    to {
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+/* Dark Mode */
+body.clockify-dark-mode,
+.clockify-dark-mode {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .logo {
+    width: 98px;
+    background-image: url('../assets/images/clockify_logo_dark.svg') !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.clockify-dark-mode .header_and_timer {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .settings_page__header {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .start-timer {
+    background-color: var(--bg-11);
+    border: 1px solid var(--bg-12);
+}
+
+.clockify-dark-mode .start-timer_description_grey {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .start-timer_description {
+    color: var(--bg-02);
+}
+
+.clockify-dark-mode .start-timer_description-input {
+    background-color: var(--bg-11);
+    color: var(--bg-02);
+}
+
+.clockify-dark-mode .start-timer_placeholder {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .dropdown-menu {
+    background-color: var(--bg-12);
+    box-shadow: none;
+}
+
+.clockify-dark-mode .dropdown-header,
+.clockify-dark-mode .dropdown-item,
+.clockify-dark-mode .dropdown-subitem {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .dropdown-divider {
+    border-bottom: 1px dotted var(--bg-10);
+}
+
+.clockify-dark-mode .rectangle {
+    background-color: var(--bg-12);
+    box-shadow: none;
+}
+
+.clockify-dark-mode .time-entries-list {
+    border: 1px solid var(--bg-12);
+}
+
+.clockify-dark-mode .time-entries-list-time {
+    background-color: var(--bg-12);
+    border-bottom: 1px solid var(--bg-12);
+}
+
+.clockify-dark-mode .time-entries-list-total,
+.clockify-dark-mode .time-entries-list-day {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .time-entries-list-total-time {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .time-entry,
+.clockify-dark-mode .time-entry-locked {
+    background: var(--bg-11);
+    border: 1px solid var(--bg-12);
+}
+
+.clockify-dark-mode .time-entry--collapsed {
+    background-color: #36464f;
+}
+
+.clockify-dark-mode .time-entry-group-number {
+    background-color: #12191d;
+    color: #90a4ae;
+}
+
+.clockify-dark-mode .time-entry-group-number:hover {
+    background-color: #37474f;
+}
+
+.clockify-dark-mode .week-header {
+    color: var(--light_text);
+}
+
+.clockify-dark-mode .week-header-total-time {
+    color: var(--light_text);
+}
+
+.clockify-dark-mode .week-header-total-label {
+    color: #90a4ae;
+}
+
+.clockify-dark-mode .description {
+    color: var(--bg-02);
+}
+
+.clockify-dark-mode .time-entry__task-name,
+.clockify-dark-mode .time-entry__client-name,
+.clockify-dark-mode .time-entry__right-side--duration {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .no-description {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .dropdown-item:hover,
+.clockify-dark-mode .dropdown-subitem:hover {
+    background: var(--bg-10);
+}
+
+.clockify-dark-mode .workspace-list-item:hover {
+    background-color: var(--bg-10);
+}
+
+.clockify-dark-mode .workspace-list-dropdown {
+    background: var(--bg-12);
+    box-shadow: 0 5px 7px #000;
+}
+
+.clockify-dark-mode .workspace-list-item__name {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .duration-divider {
+    border-left: 1px dotted var(--bg-12);
+    background-color: var(--bg-12);
+}
+
+.clockify-dark-mode ul.project-item:hover {
+    background-color: var(--bg-10);
+}
+
+.clockify-dark-mode li.project-item-name {
+    color: white;
+}
+
+.clockify-dark-mode .project-list-name {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .project-name {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .task-item {
+    color: var(--bg-04);
+    background-color: var(--bg-10);
+}
+
+.clockify-dark-mode .task-item:hover {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .tag-list-item {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .tag-list-item-row:hover {
+    background-color: var(--bg-10);
+}
+
+.clockify-dark-mode .tag-list-selected-item {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .projects-list__create-task {
+    background-color: var(--bg-10);
+}
+
+.clockify-dark-mode .projects-list__create-project,
+.clockify-dark-mode .tag-list__create-tag,
+.clockify-dark-mode .client-list__create-client,
+.clockify-dark-mode .client-list-dropdown {
+    background-color: var(--bg-12);
+    box-shadow: none;
+}
+
+.clockify-dark-mode .create-project,
+.clockify-dark-mode .create-task {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .create-project__title,
+.clockify-dark-mode .create-task__title {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .create-project__project-name,
+.clockify-dark-mode .create-task__task-name {
+    border: 1px solid var(--bg-12);
+    background-color: var(--bg-10);
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .create-project__project-name::placeholder,
+.clockify-dark-mode .create-task__task-name::placeholder {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .create-project__project-name:focus,
+.clockify-dark-mode .create-task__task-name:focus {
+    outline: none;
+    border: 2px solid #0f3beb;
+    border-radius: 5px;
+}
+
+.clockify-dark-mode .color-picker__title,
+.clockify-dark-mode .create-project__billable-title,
+.clockify-dark-mode .create-project__public-title {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .create-project__divider {
+    border-bottom: 1px dotted var(--bg-12);
+}
+
+.clockify-dark-mode .client-list-button {
+    border: 1px solid var(--bg-12);
+    background-color: var(--bg-10);
+}
+
+.clockify-dark-mode .client-list-name {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .client-list-arrow {
+    content: url('/assets/images/arrow-dark-mode.png');
+}
+
+.clockify-dark-mode .client-list-input {
+    background: var(--bg-12);
+}
+
+.clockify-dark-mode .client-list-filter {
+    background-color: var(--bg-10);
+    border: none;
+}
+
+.clockify-dark-mode .client-list-filter::placeholder {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .client-list-client {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .client-list__create-form {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .client-list__create-form--open {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.clockify-dark-mode .client-list__create-form--divider {
+    border-bottom: 1px dotted var(--bg-12);
+}
+
+.clockify-dark-mode .client-list__create-form--title {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .client-list__create-form--client-name {
+    border: 1px solid var(--bg-12);
+    background-color: var(--bg-10);
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .client-list__create-form--client-name::placeholder {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .tag-list--not_tags {
+    color: #8c9fa9;
+}
+
+.clockify-dark-mode .tag-list__create-form,
+.clockify-dark-mode .popup-modal {
+    background-color: var(--bg-09);
+}
+
+.clockify-dark-mode .tag-list__create-form--open,
+.clockify-dark-mode .popup-modal--open {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.clockify-dark-mode .tag-list__create-form--divider,
+.clockify-dark-mode .popup-modal--divider {
+    border-bottom: 1px dotted var(--bg-12);
+}
+
+.clockify-dark-mode .tag-list__create-form--title,
+.clockify-dark-mode .popup-modal--title,
+.clockify-dark-mode .tag-list__create-form p,
+.clockify-dark-mode .popup-modal p {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .tag-list__create-form--tag-name,
+.clockify-dark-mode .popup-modal--tag-name {
+    border: 1px solid var(--bg-12);
+    background-color: var(--bg-10);
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .tag-list__create-form--tag-name::placeholder,
+.clockify-dark-mode .popup-modal--tag-name::placeholder {
+    color: var(--bg-04);
+}
+
+.clockify-dark-mode .clockify-modal-content {
+    background-color: #37474f;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.clockify-dark-mode .clockify-modal-content .cl-modal-title,
+.clockify-dark-mode .clockify-modal-content .custom-field-link-label {
+    color: var(--light_text);
+}
+
+.clockify-dark-mode .clockify-modal-content .custom-field-link {
+    background-color: #263238;
+    color: var(--light_text);
+}
+
+.clockify-dark-mode .clockify-modal-content .cl-close {
+    background: none;
+}
+
+.clockify-dark-mode .clockify-modal-content .cl-close .clockify-close {
+    background: none;
+}
+
+.clockify-dark-mode .clockify-modal-content .cl-modal-header {
+    border-bottom: 1px dotted #12191d;
+}
+
+.clockify-dark-mode .clockify-modal-content .cl-modal-footer {
+    border-top: 1px dotted #12191d;
+}
+
+.clockify-dark-mode .tag-list-selected {
+    background-color: var(--bg-12);
+}
+
+.clockify-dark-mode .tag-list-item--comma {
+    color: white;
+}
+
+.clockify-dark-mode .app-version {
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode .clockify-error {
+    color: red;
+    font-size: 14px;
+}
+
+.clockify-dark-mode .loading-entries {
+    color: var(--light_text);
+}
+
+.clockify-dark-mode .autocomplete-dropdown-item {
+    color: #90a4ae;
+    background-color: #1d272c;
+}
+
+.clockify-dark-mode .autocomplete-dropdown-item:hover {
+    background-color: #263238;
+}
+
+.clockify-dark-mode .autocomplete-dropdown-item__tag {
+    color: #90a4ae;
+    background: #12191d;
+}
+
+.clockify-dark-mode .autocomplete-dropdown-item__tag:hover {
+    background: #37474f;
+}
+
+.clockify-dark-mode .react-autocomplete > div {
+    background: #1d272c !important;
+}
+
+.clockify-dark-mode .edit-form__break-label {
+    background: var(--bg-10);
+    color: var(--bg-03);
+}
+
+.clockify-dark-mode.clockify-integration-popup {
+    color: var(--light_text);
+}
+
+.clockify-dark-mode div.custom-field-ta {
+    background-color: var(--bg-09) !important;
+}
+
+.clockify-dark-mode .clockify-manual-entry-header-text {
+    color: #f4f4f4;
+}
+
+.clockify-dark-mode .notification .notification-title {
+    color: #c6d2d9 !important;
+}
+
+.clockify-dark-mode .notification .notification-message {
+    color: #c6d2d9 !important;
+}
+
+.clockify-dark-mode .notification:hover {
+    background-color: #263238 !important;
+} 

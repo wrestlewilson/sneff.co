@@ -28,27 +28,27 @@
 @keyframes neonPulse {
     0% {
         text-shadow: 
-            0 0 5px var(--text-color),
-            0 0 10px var(--text-color),
-            0 0 20px var(--primary-color),
-            0 0 40px var(--primary-color),
-            0 0 80px var(--primary-color);
+            0 0 5px var(--text),
+            0 0 10px var(--text),
+            0 0 20px var(--primary),
+            0 0 40px var(--primary),
+            0 0 80px var(--primary);
     }
     50% {
         text-shadow: 
-            0 0 5px var(--text-color),
-            0 0 15px var(--text-color),
-            0 0 30px var(--primary-color),
-            0 0 60px var(--primary-color),
-            0 0 100px var(--primary-color);
+            0 0 5px var(--text),
+            0 0 15px var(--text),
+            0 0 30px var(--primary),
+            0 0 60px var(--primary),
+            0 0 100px var(--primary);
     }
     100% {
         text-shadow: 
-            0 0 5px var(--text-color),
-            0 0 10px var(--text-color),
-            0 0 20px var(--primary-color),
-            0 0 40px var(--primary-color),
-            0 0 80px var(--primary-color);
+            0 0 5px var(--text),
+            0 0 10px var(--text),
+            0 0 20px var(--primary),
+            0 0 40px var(--primary),
+            0 0 80px var(--primary);
     }
 }
 
@@ -95,7 +95,7 @@
 .typing {
     overflow: hidden;
     white-space: nowrap;
-    border-right: 3px solid var(--primary-color);
+    border-right: 3px solid var(--primary);
     animation: 
         typing 3.5s steps(40, end),
         blink 0.75s step-end infinite;
@@ -163,4 +163,25 @@
 
 .rotate-in {
     animation: rotateIn 0.7s ease-out;
+}
+
+/* Apply Animations to Elements */
+.hero h1 {
+    animation: fadeIn 1s ease-in, neonPulse 2s infinite;
+}
+
+.hero p {
+    animation: slideUp 0.8s ease-out;
+}
+
+.project-card {
+    animation: scaleIn 0.5s ease-out;
+}
+
+.skill-card {
+    animation: rotateIn 0.7s ease-out;
+}
+
+.contact-form {
+    animation: fadeIn 1s ease-in;
 } 
