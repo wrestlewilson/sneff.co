@@ -1,0 +1,166 @@
+/* Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Slide Up */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Neon Pulse */
+@keyframes neonPulse {
+    0% {
+        text-shadow: 
+            0 0 5px var(--text-color),
+            0 0 10px var(--text-color),
+            0 0 20px var(--primary-color),
+            0 0 40px var(--primary-color),
+            0 0 80px var(--primary-color);
+    }
+    50% {
+        text-shadow: 
+            0 0 5px var(--text-color),
+            0 0 15px var(--text-color),
+            0 0 30px var(--primary-color),
+            0 0 60px var(--primary-color),
+            0 0 100px var(--primary-color);
+    }
+    100% {
+        text-shadow: 
+            0 0 5px var(--text-color),
+            0 0 10px var(--text-color),
+            0 0 20px var(--primary-color),
+            0 0 40px var(--primary-color),
+            0 0 80px var(--primary-color);
+    }
+}
+
+.neon-pulse {
+    animation: neonPulse 2s infinite;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+/* Retro Typing */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary-color);
+    animation: 
+        typing 3.5s steps(40, end),
+        blink 0.75s step-end infinite;
+}
+
+/* Hover Float */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hover-float:hover {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Rainbow Text */
+@keyframes rainbow {
+    0% { color: #ff0000; }
+    17% { color: #ff00ff; }
+    33% { color: #0000ff; }
+    50% { color: #00ffff; }
+    67% { color: #00ff00; }
+    83% { color: #ffff00; }
+    100% { color: #ff0000; }
+}
+
+.rainbow-text {
+    animation: rainbow 4s linear infinite;
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.5s ease-out;
+}
+
+/* Rotate In */
+@keyframes rotateIn {
+    from {
+        transform: rotate(-180deg) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.rotate-in {
+    animation: rotateIn 0.7s ease-out;
+} 

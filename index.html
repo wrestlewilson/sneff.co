@@ -1,48 +1,183 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en" class="theme light">
 <head>
+    <base href="/">
     <meta charset="utf-8">
     <title>Synthwave 8-Bit Portfolio Website Design</title>
+    <meta name="app-name" content="sneff_portfolio">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio website with synthwave and 8-bit aesthetic">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta property="og:title" content="Synthwave 8-Bit Portfolio Website Design">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="icon" href="assets/images/favicon-192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" sizes="180x180">
+    
+    <!-- Stylesheets -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/synthwave.css" rel="stylesheet">
+    <link href="assets/css/animations.css" rel="stylesheet">
+    
+    <!-- Prevent right-click on media -->
+    <script>
+        document.addEventListener('contextmenu', (e) => {
+            const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
+                tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
+            );
+            isMedia && e.preventDefault();
+        });
+    </script>
 </head>
-<body class="clockify-dark-mode">
-    <header class="header_and_timer">
-        <nav>
-            <h1>Steven Neff</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+<body>
+    <!-- Synthwave Grid Background -->
+    <div class="synthwave-grid"></div>
+    
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
+
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="synthwave-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <a href="#" class="logo neon-text">SNEFF</a>
+                    <div class="nav-links">
+                        <a href="#about" class="neon-text-cyan">About</a>
+                        <a href="#projects" class="neon-text-cyan">Projects</a>
+                        <a href="#skills" class="neon-text-cyan">Skills</a>
+                        <a href="#contact" class="neon-text-cyan">Contact</a>
+                    </div>
+                </div>
+            </div>
         </nav>
-    </header>
 
-    <main>
-        <section id="about" class="section">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! I'm a developer passionate about creating amazing web experiences.</p>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <!-- Project cards will go here -->
+        <!-- Hero Section -->
+        <section class="hero synthwave-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="neon-text typing">Welcome to the Future</h1>
+                    <p class="neon-text-cyan slide-up">Full-Stack Developer & Digital Artist</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="synthwave-btn hover-float">View Projects</a>
+                        <a href="#contact" class="synthwave-btn hover-float">Contact Me</a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Get in touch with me:</p>
-            <div class="contact-info">
-                <!-- Contact information will go here -->
+        <!-- About Section -->
+        <section id="about" class="synthwave-section">
+            <div class="container">
+                <h2 class="neon-text text-center">About Me</h2>
+                <div class="about-content">
+                    <div class="synthwave-card scale-in">
+                        <p>I'm a passionate developer with a love for retro aesthetics and modern technology. My journey in tech has led me through various domains, from web development to digital art creation.</p>
+                    </div>
+                </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 Steven Neff. All rights reserved.</p>
-    </footer>
+        <!-- Projects Section -->
+        <section id="projects" class="synthwave-section">
+            <div class="container">
+                <h2 class="neon-text text-center">Projects</h2>
+                <div class="projects-grid">
+                    <div class="synthwave-card hover-float">
+                        <h3 class="neon-text-cyan">Project One</h3>
+                        <p>Description of your amazing project goes here.</p>
+                        <a href="#" class="synthwave-btn">View Project</a>
+                    </div>
+                    <div class="synthwave-card hover-float">
+                        <h3 class="neon-text-cyan">Project Two</h3>
+                        <p>Another incredible project description.</p>
+                        <a href="#" class="synthwave-btn">View Project</a>
+                    </div>
+                    <div class="synthwave-card hover-float">
+                        <h3 class="neon-text-cyan">Project Three</h3>
+                        <p>Yet another fantastic project showcase.</p>
+                        <a href="#" class="synthwave-btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="synthwave-section">
+            <div class="container">
+                <h2 class="neon-text text-center">Skills</h2>
+                <div class="skills-grid">
+                    <div class="synthwave-card rotate-in">
+                        <h3 class="neon-text-cyan">Frontend</h3>
+                        <ul>
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                        </ul>
+                    </div>
+                    <div class="synthwave-card rotate-in">
+                        <h3 class="neon-text-cyan">Backend</h3>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>Python</li>
+                            <li>PHP</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="synthwave-card rotate-in">
+                        <h3 class="neon-text-cyan">Tools</h3>
+                        <ul>
+                            <li>Git</li>
+                            <li>Docker</li>
+                            <li>AWS</li>
+                            <li>Figma</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="synthwave-section">
+            <div class="container">
+                <h2 class="neon-text text-center">Contact</h2>
+                <div class="contact-content">
+                    <div class="synthwave-card fade-in">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" class="synthwave-input">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Your Email" class="synthwave-input">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Your Message" class="synthwave-input"></textarea>
+                            </div>
+                            <button type="submit" class="synthwave-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="synthwave-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <p class="neon-text">© 2024 SNEFF. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="neon-text-cyan">GitHub</a>
+                        <a href="#" class="neon-text-cyan">LinkedIn</a>
+                        <a href="#" class="neon-text-cyan">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html> 
