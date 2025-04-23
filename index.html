@@ -1,36 +1,48 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" class="theme light EHoceA">
+<html dir="ltr" lang="en" class="theme light">
 <head>
-    <base href="/">
     <meta charset="utf-8">
     <title>Synthwave 8-Bit Portfolio Website Design</title>
-    <meta name="app-name" content="export_website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="assets/a0684b0780c739e9.vendor.ltr.css" rel="stylesheet">
-    <link href="assets/c0568bb736a69e09.ltr.css" rel="stylesheet">
-    <link href="assets/static_font_4.ltr.css" rel="stylesheet">
-    <link href="assets/7699c5e1384f969f.runtime.js" rel="preload" as="script" crossorigin="anonymous">
-    <link href="assets/6b0b6cd7b4380852.i3d79q.vendor.js" rel="preload" as="script" crossorigin="anonymous">
-    <link href="assets/163fe08cc92707ff.vendor.js" rel="preload" as="script" crossorigin="anonymous">
-    <link href="assets/2675ec4d0dae5e19.strings.js" rel="preload" as="script" crossorigin="anonymous">
-    <link href="assets/b7fbc767de77d415.en.js" rel="preload" as="script" crossorigin="anonymous">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta property="og:title" content="Synthwave 8-Bit Portfolio Website Design">
-    <meta property="og:type" content="website">
-    <link rel="shortcut icon" href="assets/images/2d0b56e7e51cf11036ad8734bdb67e2d.png">
-    <link rel="icon" href="assets/images/e53c4bd8da5e491d9ab09e7cf0daf874.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="assets/images/725b756a69a7d4c235070e51acd85560.png" sizes="180x180">
-    <script nonce="">
-      document.addEventListener('contextmenu', (e) => {
-        const isMedia = ['img', 'image', 'video', 'svg', 'picture'].some(
-          tagName => tagName.localeCompare(e.target.tagName, undefined, { sensitivity: 'base' }) === 0,
-        );
-        isMedia && e.preventDefault();
-      });
-    </script>
+    <meta name="description" content="Portfolio website with synthwave and 8-bit aesthetic">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-    <!-- Your content will go here -->
+<body class="clockify-dark-mode">
+    <header class="header_and_timer">
+        <nav>
+            <h1>Steven Neff</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I'm a developer passionate about creating amazing web experiences.</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <!-- Project cards will go here -->
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Get in touch with me:</p>
+            <div class="contact-info">
+                <!-- Contact information will go here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Steven Neff. All rights reserved.</p>
+    </footer>
 </body>
 </html> 
