@@ -47,12 +47,15 @@ body::before {
   width: 200%;
   height: 200%;
   background-image: 
-    linear-gradient(to right, rgba(255, 0, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 0, 255, 0.15) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 0, 255, 0.15) 2px, transparent 2px);
   background-size: 40px 40px;
   z-index: 0;
   pointer-events: none;
   animation: gridMove 30s linear infinite;
+  box-shadow: 
+    0 0 10px rgba(255, 0, 255, 0.2),
+    0 0 20px rgba(255, 0, 255, 0.1);
 }
 
 /* Animate the grid */
