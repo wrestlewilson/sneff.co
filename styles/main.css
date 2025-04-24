@@ -33,6 +33,93 @@ body {
 }
 
 /* Navigation */
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.bg-\[\#0d0d0d\]\/80 {
+  background-color: rgba(13, 13, 13, 0.8);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.sm\:px-6 {
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.lg\:px-8 {
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.md\:flex {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.space-x-8 > * + * {
+  margin-left: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.hover\:text-pink-500:hover {
+  color: #ec4899;
+}
+
+.transition-colors {
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .nav {
   position: fixed;
   top: 0;
