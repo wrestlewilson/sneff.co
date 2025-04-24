@@ -22,13 +22,16 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 /* Step 1: Unified background on <body> */
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #1a2b4d, #0a192f);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a2b4d 0%, #0a192f 100%);
+  background-attachment: fixed;
   color: #fff;
   font-family: 'Press Start 2P', sans-serif;
   position: relative;
