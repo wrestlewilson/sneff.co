@@ -10,6 +10,7 @@
   --neon-magenta: #f0f;
   --neon-pink: #ff00ff;
   --neon-purple: #8b5cf6;
+  --neon-blue: #00ffff;
 }
 
 /* Reset & Base Styles */
@@ -601,4 +602,96 @@ body {
 
 .text-base {
   font-size: 1rem;
+}
+
+/* Skills Section */
+.from-\[\#1a1a1a\] {
+  --start-color: #1a1a1a;
+}
+
+.to-\[\#0d0d0d\] {
+  --end-color: #0d0d0d;
+}
+
+.neon-blue-glow {
+  text-shadow: 
+    0 0 10px var(--neon-blue),
+    0 0 20px var(--neon-blue),
+    0 0 30px var(--neon-blue);
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.bg-gray-700 {
+  background-color: #374151;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--start-color), var(--end-color));
+}
+
+.from-pink-500 {
+  --start-color: #ec4899;
+}
+
+.to-yellow-400 {
+  --end-color: #fbbf24;
+}
+
+.from-blue-500 {
+  --start-color: #3b82f6;
+}
+
+.to-purple-600 {
+  --end-color: #9333ea;
+}
+
+.from-teal-400 {
+  --start-color: #2dd4bf;
+}
+
+.to-indigo-500 {
+  --end-color: #6366f1;
+}
+
+.from-orange-400 {
+  --start-color: #fb923c;
+}
+
+.to-pink-500 {
+  --end-color: #ec4899;
 } 
