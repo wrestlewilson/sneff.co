@@ -321,4 +321,107 @@
 /* Grid Animation */
 .animated-grid {
     animation: gridMove 30s linear infinite;
+}
+
+/* Pixel Text Animation */
+@keyframes pixelate {
+    0% {
+        filter: blur(15px);
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    25% {
+        filter: blur(10px);
+        opacity: 0.3;
+        transform: scale(1.1);
+    }
+    50% {
+        filter: blur(5px);
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+    75% {
+        filter: blur(2px);
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+    100% {
+        filter: blur(0);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pixel-text {
+    animation: pixelate 1.5s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    animation-fill-mode: backwards;
+}
+
+.pixel-text.delayed {
+    animation-delay: 0.8s;
+}
+
+/* Pixel Build Effect */
+.pixel-build {
+    position: relative;
+    display: inline-block;
+}
+
+.pixel-build::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--neon-cyan) 50%, 
+        transparent 100%
+    );
+    animation: pixel-scan 2s ease-out;
+    opacity: 0.5;
+}
+
+@keyframes pixel-scan {
+    0% {
+        transform: translateX(-100%) skewX(-45deg);
+    }
+    50% {
+        transform: translateX(0) skewX(-45deg);
+    }
+    100% {
+        transform: translateX(100%) skewX(-45deg);
+    }
+}
+
+/* Scanline effect for text */
+.text-scanline {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-scanline::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 255, 0.2) 50%,
+        transparent 100%
+    );
+    animation: text-scan 3s linear infinite;
+}
+
+@keyframes text-scan {
+    0% {
+        transform: translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateY(100%) rotate(45deg);
+    }
 } 
