@@ -38,15 +38,27 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-card">
-                    <p>I'm a passionate developer with a love for retro aesthetics and modern technology. My journey in tech has led me through various domains, from web development to digital art creation.</p>
-                </div>
-            </div>
+    <section id="about" class="relative py-24 bg-gradient-to-b from-[#3066A3] to-[#9F2305] text-white px-4">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold neon-text mb-12">About Me</h2>
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-12 px-4">
+          
+          <!-- Avatar Frame -->
+          <div class="relative w-48 h-48 bg-black border-4 border-pink-500 rounded-md flex items-center justify-center shadow-[0_0_25px_rgba(255,0,255,0.6)]">
+            <img src="https://via.placeholder.com/100x100.png?text=8-bit+Me" alt="Pixel Avatar" class="pixelated w-24 h-24">
+            <div class="absolute inset-0 border-2 border-blue-500 animate-pulse rounded-md"></div>
+          </div>
+
+          <!-- Bio Box -->
+          <div class="bg-black border border-purple-500 p-6 rounded-lg text-left max-w-xl mx-auto shadow-[0_0_30px_rgba(138,43,226,0.5)]">
+            <p class="text-lg md:text-xl leading-relaxed font-mono text-purple-300">
+              I'm Steve Neff — a growth strategist, brand builder, and digital operator. I play to win, zoom in and out with precision, and turn clutter into clarity. 
+              Synthwave? It's not just a vibe — it's how I code my mindset: bold, structured, and always scanning for the next level up.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
