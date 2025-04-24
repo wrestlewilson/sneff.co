@@ -38,26 +38,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 50;
-  background: rgba(13, 13, 13, 0.8);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid #222;
 }
 
 .logo {
+  color: white;
   font-family: 'Press Start 2P', sans-serif;
   font-size: 1rem;
-  color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.logo:hover {
-  color: #ec4899;
 }
 
 .nav-links {
@@ -66,15 +53,10 @@ nav {
 }
 
 .nav-links a {
+  color: white;
   font-family: 'Press Start 2P', sans-serif;
   font-size: 0.8rem;
-  color: #d1d5db;
   text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ec4899;
 }
 
 @media (max-width: 768px) {
