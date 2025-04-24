@@ -1,270 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sneff.co - Developer Portfolio</title>
-    <style>
-        /* --- Basic Reset & Defaults --- */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve Neff | VP of Digital</title>
+  <!-- Pixel-style font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Press Start 2P', monospace; background: #1d0033; color: #fff; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
 
-        body {
-            font-family: sans-serif; /* Choose a modern font */
-            line-height: 1.6;
-            background-color: #f4f4f4; /* Light background example */
-            color: #333;
-            /* Consider Dark Mode implementation later [1, 2, 3] */
-        }
+    /* Background grid */
+    .grid-bg {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image:
+        linear-gradient(#330066 1px, transparent 1px),
+        linear-gradient(90deg, #330066 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+    }
 
-        /* --- Layout Structure (Grid Example) --- */
-      .site-wrapper {
-            display: grid;
-            grid-template-rows: auto 1fr auto; /* Header, Main Content, Footer */
-            min-height: 100vh;
-            gap: 20px; /* Consistent gap between major sections [1, 4, 5, 6, 7] */
-            padding: 20px; /* Outer padding for the whole site [6, 8] */
-        }
+    /* Neon glow utility */
+    .neon {
+      color: #00faff;
+      text-shadow:
+        0 0 4px #00faff,
+        0 0 8px #00faff,
+        0 0 16px #00faff;
+    }
+    .neon-pink { color: #ff00d0; }
 
-        /* --- Header & Navigation (Flexbox Example) --- */
-      .site-header {
-            display: flex;
-            justify-content: space-between; /* Space out logo and nav */
-            align-items: center;
-            padding: 10px 0; /* Internal vertical padding [6, 8] */
-            border-bottom: 1px solid #ddd;
-        }
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; padding: 20px 40px;
+      display: flex; justify-content: flex-end; gap: 30px;
+      background: rgba(0,0,0,0.4);
+      z-index: 10;
+    }
+    header a:hover { text-shadow: 0 0 4px #fff; }
 
-      .site-header.logo { /* Corrected selector */
-            font-weight: bold;
-            font-size: 1.5em;
-        }
+    .hero {
+      height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center;
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+    .hero h2 { font-size: 1.2rem; margin-bottom: 30px; color: #ff00d0; }
+    .hero .btn-group { display: flex; gap: 20px; }
+    .hero button {
+      background: #7e00ff;
+      border: none; padding: 15px 25px;
+      color: #fff;
+      text-transform: uppercase;
+      transition: background 0.3s;
+    }
+    .hero button:hover { background: #5500aa; }
 
-      .main-nav ul {
-            list-style: none;
-            display: flex; /* Arrange nav items horizontally [9, 4, 5, 10] */
-            gap: 15px; /* Space between nav items [1, 4, 5, 6, 7] */
-        }
+    section { padding: 80px 40px; }
+    .section-title { font-size: 1.5rem; margin-bottom: 40px; border-bottom: 2px solid #00faff; display: inline-block; }
 
-      .main-nav a {
-            text-decoration: none;
-            color: #007bff;
-            padding: 5px 10px; /* Padding for clickable area [6, 8] */
-            transition: color 0.3s ease, background-color 0.3s ease; /* Subtle hover animation [9, 2, 11] */
-        }
+    /* About */
+    #about .card {
+      background: rgba(0,0,0,0.3); padding: 30px; border: 2px solid #00faff; border-radius: 8px;
+      max-width: 900px; margin: 0 auto;
+    }
+    #about .card ul { margin-top: 20px; }
+    #about .stats { display: flex; justify-content: space-around; margin-top: 30px; }
+    #about .stats div { text-align: center; }
 
-      .main-nav a:hover,
-      .main-nav a:focus { /* Ensure focus styles for accessibility [1] */
-            color: #0056b3;
-            background-color: #e9ecef;
-            outline: 2px solid #007bff; /* Basic focus indicator */
-        }
+    /* Portfolio grid */
+    #portfolio .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
+    }
+    #portfolio .card {
+      background: rgba(0,0,0,0.3); border: 2px solid transparent;
+      transition: border 0.3s, transform 0.3s;
+      padding: 20px; border-radius: 6px; position: relative;
+    }
+    #portfolio .card:hover {
+      border-color: #ff00d0;
+      transform: translateY(-5px);
+    }
+    #portfolio .card .icon { font-size: 2rem; margin-bottom: 15px; }
+    #portfolio .card h3 { margin-bottom: 10px; }
+    #portfolio .card p { margin-bottom: 10px; }
+    #portfolio .tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    #portfolio .tags span {
+      background: rgba(0,255,255,0.2); padding: 5px 8px; border-radius: 4px; font-size: .7rem;
+    }
 
-        /* --- Main Content Area --- */
-        main {
-            /* Grid handles positioning, add specific styles if needed */
-        }
+    /* Pixel dot animation */
+    .pixel-dot {
+      position: fixed; top: 80%; left: -20px;
+      width: 8px; height: 8px; background: #ff007f;
+      image-rendering: pixelated;
+      animation: fly 6s linear infinite;
+    }
+    @keyframes fly {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(120vw, -60vh); }
+    }
 
-        /* --- Project Section (Grid for Cartridges) --- */
-      .projects-section {
-            padding: 40px 0; /* Vertical spacing [6, 8] */
-        }
+    /* Contact */
+    #contact .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
+    #contact form { display: flex; flex-direction: column; gap: 20px; }
+    #contact input, #contact textarea {
+      background: rgba(255,255,255,0.1); border: 1px solid #5500aa; padding: 12px; color: #fff; resize: vertical;
+    }
+    #contact button { background: #00faff; border: none; padding: 15px; text-transform: uppercase; }
+    #contact button:hover { background: #00c0cc; }
 
-      .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid [9, 4, 10] */
-            gap: 30px; /* Space between cartridges [1, 4, 5, 6, 7] */
-        }
-
-        /* --- Simple Cartridge Visual Example --- */
-      .game-cartridge {
-            background-color: #555; /* Cartridge body color */
-            border: 3px solid #333;
-            border-radius: 8px 8px 0 0;
-            padding: 10px; /* Space inside cartridge [6, 8] */
-            aspect-ratio: 3 / 4; /* Maintain shape */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative; /* For potential absolute positioning inside */
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation [9, 2, 11] */
-            /* Add ARIA roles/attributes for accessibility */
-        }
-
-      .game-cartridge:hover,
-      .game-cartridge:focus {
-            transform: translateY(-5px); /* Subtle lift effect [8, 2] */
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            outline: 2px solid #007bff; /* Focus indicator */
-        }
-
-      .cartridge-label {
-            background-color: #eee; /* Label background */
-            padding: 15px 10px; /* Label internal spacing [6, 8] */
-            text-align: center;
-            border: 2px solid #ccc;
-            margin-bottom: 10px; /* Space below label [6, 8] */
-        }
-
-      .cartridge-label h3 {
-            font-size: 1em;
-            margin: 0; /* Reset heading margin */
-            color: #333;
-        }
-
-      .cartridge-details { /* Hidden by default, shown on interaction */
-            display: none;
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            /* Add animation for reveal */
-        }
-
-        /* --- Footer --- */
-      .site-footer {
-            text-align: center;
-            padding: 20px 0; /* Internal vertical padding [6, 8] */
-            border-top: 1px solid #ddd;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        /* --- Accessibility --- */
-        /* Add styles for prefers-reduced-motion media query [1, 9] */
-        @media (prefers-reduced-motion: reduce) {
-          .game-cartridge:hover,
-          .game-cartridge:focus {
-              transform: none;
-              box-shadow: none;
-            }
-          .main-nav a {
-              transition: none;
-            }
-            /* Disable other animations */
-        }
-
-    </style>
+    /* Footer */
+    footer { text-align: center; padding: 30px; background: rgba(0,0,0,0.4); }
+    footer p { font-size: 0.7rem; }
+  </style>
 </head>
 <body>
-    <div class="site-wrapper">
-        <header class="site-header">
-            <div class="logo">Sneff.co</div>
-            <nav class="main-nav" aria-label="Main Navigation">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    </ul>
-            </nav>
-        </header>
+  <div class="grid-bg"></div>
+  <header>
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#skills">Skills</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </header>
 
-        <main>
-            <section id="hero" aria-labelledby="hero-heading">
-                <h1 id="hero-heading">Welcome to Sneff.co</h1>
-                <p>Showcasing awesome projects.</p>
-                </section>
-
-            <section id="about" aria-labelledby="about-heading">
-                <h2 id="about-heading">About Me</h2>
-                <p>Introduce yourself here. Add personality! [2, 12, 13, 14]</p>
-            </section>
-
-            <section id="projects" class="projects-section" aria-labelledby="projects-heading">
-                <h2 id="projects-heading">Projects</h2>
-                <div class="projects-grid">
-                    <div class="game-cartridge" tabindex="0" aria-label="Project Title 1 - Click for details">
-                        <div class="cartridge-label">
-                            <h3>Project Title 1</h3>
-                            </div>
-                        <div class="cartridge-details">
-                            <h4>Project Title 1</h4>
-                            <p>Detailed description goes here. Explain goals, process, challenges, results.[8, 13, 14]</p>
-                            <a href="#">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="game-cartridge" tabindex="0" aria-label="Project Title 2 - Click for details">
-                         <div class="cartridge-label">
-                            <h3>Project Title 2</h3>
-                        </div>
-                         <div class="cartridge-details">
-                            <h4>Project Title 2</h4>
-                            <p>Detailed description.</p>
-                            <a href="#">View Project</a>
-                        </div>
-                    </div>
-
-                    </div>
-            </section>
-
-            <section id="contact" aria-labelledby="contact-heading">
-                 <h2 id="contact-heading">Contact</h2>
-                 <p>Add contact form or details here.</p>
-                 </section>
-        </main>
-
-        <footer class="site-footer">
-            <p>&copy; 2025 Sneff.co. All rights reserved.</p>
-        </footer>
+  <section class="hero">
+    <h1 class="neon">Steve Neff</h1>
+    <h2>VP of Digital</h2>
+    <div class="btn-group">
+      <button onclick="location.href='#portfolio'">View Work</button>
+      <button onclick="location.href='#contact'">Contact Me</button>
     </div>
+  </section>
 
-    <script>
-        // --- JavaScript for Interactivity ---
+  <section id="about">
+    <h2 class="section-title neon">About Me</h2>
+    <div class="card">
+      <p>High-functioning hybrid—part VP of Growth at a $1B+ CPG house, part founder of a sharp-as-hell digital agency...</p>
+      <ul>
+        <li>Strategy meets execution.</li>
+        <li>Brand meets CAC discipline.</li>
+        <li>Vision meets "get it done by Friday."</li>
+      </ul>
+      <p>Outside of work, Seattle-based dad, lifter, runner, pizza maker...</p>
+      <div class="stats">
+        <div><strong>20+</strong><br>Years Exp.</div>
+        <div><strong>100+</strong><br>Projects</div>
+        <div><strong>30+</strong><br>Happy Clients</div>
+      </div>
+    </div>
+  </section>
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const cartridges = document.querySelectorAll('.game-cartridge');
+  <section id="portfolio">
+    <h2 class="section-title neon">My Work</h2>
+    <div class="grid">
+      <!-- Repeat cards for each project -->
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Paid Media</h3>
+        <p>Digital brand, product & performance marketing</p>
+        <div class="tags"><span>Meta</span><span>Google</span><span>TikTok</span></div>
+      </div>
+      <!-- Add other cards similarly... -->
+    </div>
+  </section>
 
-            cartridges.forEach(cartridge => {
-                // Basic click listener example to toggle details visibility
-                // More complex animations (e.g., 'insert' effect, smooth reveals)
-                // would be implemented here using CSS classes toggled by JS,
-                // or preferably an animation library like GSAP or Motion.[15, 16, 17, 18]
+  <div class="pixel-dot"></div>
 
-                const details = cartridge.querySelector('.cartridge-details');
+  <section id="skills">
+    <h2 class="section-title neon">Skills & Expertise</h2>
+    <!-- Bars could be added here -->
+    <p style="text-align:center;">[Skill bars placeholder]</p>
+  </section>
 
-                const showDetails = () => {
-                    if (details) details.style.display = 'block';
-                    // Add animation class here
-                };
+  <section id="testimonials">
+    <h2 class="section-title neon">Testimonials</h2>
+    <p style="text-align:center;">[Testimonial cards placeholder]</p>
+  </section>
 
-                const hideDetails = () => {
-                     if (details) details.style.display = 'none';
-                     // Remove animation class here
-                };
+  <section id="contact">
+    <h2 class="section-title neon">Get in Touch</h2>
+    <div class="contact-grid">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div>
+        <h3 class="neon-pink">Contact Info</h3>
+        <p>Email: steve@meta4digital.com</p>
+        <p>Phone: 206.353.5329</p>
+        <p>Location: Seattle, WA</p>
+        <h3 class="neon-pink">Follow Me</h3>
+        <p>[Social icons]</p>
+      </div>
+    </div>
+  </section>
 
-                // Example: Show on click, hide on mouseleave (simple interaction)
-                cartridge.addEventListener('click', showDetails);
-                cartridge.addEventListener('keydown', (event) => {
-                    // Corrected the OR operator here
-                    if (event.key === 'Enter' |
-| event.key === ' ') {
-                        showDetails();
-                    }
-                });
-
-                // Add logic to hide details (e.g., clicking outside, a close button)
-                // For simplicity, hiding on mouseleave here:
-                cartridge.addEventListener('mouseleave', hideDetails);
-
-
-                // Placeholder for more advanced animation library integration:
-                // Example using a hypothetical GSAP setup:
-                // const tl = gsap.timeline({ paused: true });
-                // tl.to(details, { opacity: 1, y: 0, duration: 0.5 }); // Example reveal animation
-                // cartridge.addEventListener('click', () => tl.play());
-                // Add logic to reverse/reset animation
-            });
-
-            // Add other JS for smooth scrolling, form handling, etc.
-        });
-    </script>
+  <footer>
+    <p>&copy; 2025 Steve Neff. All rights reserved.</p>
+  </footer>
 </body>
 </html>
