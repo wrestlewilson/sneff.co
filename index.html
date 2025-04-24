@@ -1,125 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Steve Neff | VP of Digital</title>
-  <!-- Pixel-style font -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Steve Neff | Synthwave 8‑Bit Portfolio</title>
+  <!-- Pixel font -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { height: 100%; font-family: 'Press Start 2P', monospace; background: #1d0033; color: #fff; overflow-x: hidden; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-    button { font-family: inherit; cursor: pointer; }
+    /* Reset & Base */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html,body{height:100%;overflow-x:hidden;font-family:'Press Start 2P',monospace;background:#1d0033;color:#fff}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
 
-    /* Background grid */
-    .grid-bg {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image:
-        linear-gradient(#330066 1px, transparent 1px),
-        linear-gradient(90deg, #330066 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -1;
+    /* Grid BG + Scanlines */
+    body::before,body::after{
+      content:"";position:fixed;top:0;left:0;width:100%;height:100%;z-index:-2;
+    }
+    body::before{
+      background:
+        linear-gradient(#330066 1px,transparent 1px) 0 0,
+        linear-gradient(90deg,#330066 1px,transparent 1px) 0 0;
+      background-size:40px 40px;
+    }
+    body::after{
+      background:rgba(255,255,255,0.03);
+      background-image:repeating-linear-gradient(transparent,transparent 1px,rgba(255,255,255,0.1) 2px);
+      pointer-events:none;
     }
 
-    /* Neon glow utility */
-    .neon {
-      color: #00faff;
-      text-shadow:
-        0 0 4px #00faff,
-        0 0 8px #00faff,
-        0 0 16px #00faff;
-    }
-    .neon-pink { color: #ff00d0; }
+    /* Neon utilities */
+    .neon-blue{color:#00faff;text-shadow:0 0 4px,#00faff,0 0 12px,#00faff,0 0 24px,#00faff}
+    .neon-pink{color:#ff00d0;text-shadow:0 0 4px,#ff00d0,0 0 12px,#ff00d0,0 0 24px,#ff00d0}
 
-    header {
-      position: fixed; top: 0; left: 0; width: 100%; padding: 20px 40px;
-      display: flex; justify-content: flex-end; gap: 30px;
-      background: rgba(0,0,0,0.4);
-      z-index: 10;
-    }
-    header a:hover { text-shadow: 0 0 4px #fff; }
+    /* Header/Nav */
+    header{position:fixed;top:0;left:0;width:100%;padding:16px 32px;background:rgba(0,0,0,0.5);display:flex;justify-content:flex-end;gap:24px;z-index:100}
+    header a{font-size:0.8rem;transition:text-shadow .2s}
+    header a:hover{text-shadow:0 0 4px #fff}
 
-    .hero {
-      height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center;
-    }
-    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-    .hero h2 { font-size: 1.2rem; margin-bottom: 30px; color: #ff00d0; }
-    .hero .btn-group { display: flex; gap: 20px; }
-    .hero button {
-      background: #7e00ff;
-      border: none; padding: 15px 25px;
-      color: #fff;
-      text-transform: uppercase;
-      transition: background 0.3s;
-    }
-    .hero button:hover { background: #5500aa; }
+    /* Hero */
+    .hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:16px}
+    .hero h1{font-size:3rem;animation:float 4s ease-in-out infinite;}
+    .hero h2{font-size:1.2rem;color:#ff00d0}
+    .btn-group{display:flex;gap:16px}
+    .btn{padding:12px 24px;background:#7e00ff;text-transform:uppercase;border:none;cursor:pointer;transition:background .3s,transform .2s}
+    .btn:hover{background:#5500aa;transform:translateY(-2px)}
 
-    section { padding: 80px 40px; }
-    .section-title { font-size: 1.5rem; margin-bottom: 40px; border-bottom: 2px solid #00faff; display: inline-block; }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+    /* Section Titles */
+    section{padding:80px 40px}
+    .section-title{font-size:1.4rem;margin-bottom:40px;display:inline-block;border-bottom:2px solid #00faff}
+
+    /* Cards */
+    .card{background:rgba(0,0,0,0.3);border:2px solid transparent;border-radius:6px;padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:border .3s,transform .3s}
+    .card:hover{border-color:#ff00d0;transform:translateY(-4px)}
 
     /* About */
-    #about .card {
-      background: rgba(0,0,0,0.3); padding: 30px; border: 2px solid #00faff; border-radius: 8px;
-      max-width: 900px; margin: 0 auto;
-    }
-    #about .card ul { margin-top: 20px; }
-    #about .stats { display: flex; justify-content: space-around; margin-top: 30px; }
-    #about .stats div { text-align: center; }
+    #about .card{max-width:900px;margin:0 auto}
+    #about ul{margin:16px 0;line-height:1.4}
+    #about .stats{display:flex;justify-content:space-around;margin-top:24px;font-size:0.9rem}
 
-    /* Portfolio grid */
-    #portfolio .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
-    }
-    #portfolio .card {
-      background: rgba(0,0,0,0.3); border: 2px solid transparent;
-      transition: border 0.3s, transform 0.3s;
-      padding: 20px; border-radius: 6px; position: relative;
-    }
-    #portfolio .card:hover {
-      border-color: #ff00d0;
-      transform: translateY(-5px);
-    }
-    #portfolio .card .icon { font-size: 2rem; margin-bottom: 15px; }
-    #portfolio .card h3 { margin-bottom: 10px; }
-    #portfolio .card p { margin-bottom: 10px; }
-    #portfolio .tags { display: flex; gap: 10px; flex-wrap: wrap; }
-    #portfolio .tags span {
-      background: rgba(0,255,255,0.2); padding: 5px 8px; border-radius: 4px; font-size: .7rem;
-    }
+    /* Portfolio */
+    #portfolio .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    #portfolio .card .icon{font-size:2rem;margin-bottom:12px}
 
-    /* Pixel dot animation */
-    .pixel-dot {
-      position: fixed; top: 80%; left: -20px;
-      width: 8px; height: 8px; background: #ff007f;
-      image-rendering: pixelated;
-      animation: fly 6s linear infinite;
-    }
-    @keyframes fly {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(120vw, -60vh); }
-    }
+    /* Skills Bars */
+    #skills .skill{margin-bottom:20px}
+    #skills .skill-label{display:flex;justify-content:space-between;font-size:0.8rem}
+    #skills .bar-bg{width:100%;height:12px;background:rgba(255,255,255,0.1);border-radius:6px;overflow:hidden}
+    #skills .bar-fill{height:100%;background:linear-gradient(90deg,#00faff,#ff00d0);animation:fill 1.5s ease-out both}
+    @keyframes fill{0%{width:0}100%{width:var(--pct)}}
+
+    /* Testimonials */
+    #testimonials .grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    #testimonials .card{min-height:180px}
+    #testimonials .card p{font-size:0.7rem;line-height:1.4;margin-bottom:16px}
+    #testimonials .author{display:flex;align-items:center;gap:10px;font-size:0.75rem}
+    #testimonials .author .avatar{width:32px;height:32px;border-radius:50%;background:#5500aa;display:inline-block}
 
     /* Contact */
-    #contact .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
-    #contact form { display: flex; flex-direction: column; gap: 20px; }
-    #contact input, #contact textarea {
-      background: rgba(255,255,255,0.1); border: 1px solid #5500aa; padding: 12px; color: #fff; resize: vertical;
-    }
-    #contact button { background: #00faff; border: none; padding: 15px; text-transform: uppercase; }
-    #contact button:hover { background: #00c0cc; }
+    #contact .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:0 auto}
+    #contact input,#contact textarea{width:100%;padding:12px;background:rgba(255,255,255,0.1);border:1px solid #5500aa;color:#fff;resize:vertical}
+    #contact button{padding:12px;text-transform:uppercase;border:none;background:#00faff;transition:background .3s}
+    #contact button:hover{background:#00c0cc}
+
+    /* Pixel dot animation */
+    .pixel-dot{position:fixed;top:80%;left:-10px;width:6px;height:6px;background:#ff007f;image-rendering:pixelated;animation:fly 5s linear infinite}
+    @keyframes fly{0%{transform:translate(0,0)}100%{transform:translate(120vw,-70vh)}}
 
     /* Footer */
-    footer { text-align: center; padding: 30px; background: rgba(0,0,0,0.4); }
-    footer p { font-size: 0.7rem; }
+    footer{text-align:center;padding:20px;background:rgba(0,0,0,0.5);font-size:0.7rem}
+
+    /* Responsive */
+    @media(max-width:768px){header{justify-content:center;gap:12px}#testimonials .grid,#portfolio .grid{grid-template-columns:1fr}#contact .grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="grid-bg"></div>
   <header>
     <a href="#about">About</a>
     <a href="#portfolio">Portfolio</a>
@@ -129,24 +106,24 @@
   </header>
 
   <section class="hero">
-    <h1 class="neon">Steve Neff</h1>
-    <h2>VP of Digital</h2>
+    <h1 class="neon-blue">Steve Neff</h1>
+    <h2 class="neon-pink">VP of Digital</h2>
     <div class="btn-group">
-      <button onclick="location.href='#portfolio'">View Work</button>
-      <button onclick="location.href='#contact'">Contact Me</button>
+      <button class="btn" onclick="location.href='#portfolio'">View Work</button>
+      <button class="btn" onclick="location.href='#contact'">Contact Me</button>
     </div>
   </section>
 
   <section id="about">
-    <h2 class="section-title neon">About Me</h2>
-    <div class="card">
-      <p>High-functioning hybrid—part VP of Growth at a $1B+ CPG house, part founder of a sharp-as-hell digital agency...</p>
+    <h2 class="section-title neon-blue">About Me</h2>
+    <div class="card neon-blue">
+      <p>High-functioning hybrid—part VP of Growth at a $1B+ CPG, part digital agency founder. I build, test, scale, and evolve brands with performance marketing + strategic storytelling.</p>
       <ul>
-        <li>Strategy meets execution.</li>
-        <li>Brand meets CAC discipline.</li>
-        <li>Vision meets "get it done by Friday."</li>
+        <li>Strategy meets execution</li>
+        <li>Brand meets CAC discipline</li>
+        <li>Vision meets “get it done by Friday”</li>
       </ul>
-      <p>Outside of work, Seattle-based dad, lifter, runner, pizza maker...</p>
+      <p>Outside work: Seattle dad, runner, lifter, Neapolitan pizza maker.</p>
       <div class="stats">
         <div><strong>20+</strong><br>Years Exp.</div>
         <div><strong>100+</strong><br>Projects</div>
@@ -156,39 +133,72 @@
   </section>
 
   <section id="portfolio">
-    <h2 class="section-title neon">My Work</h2>
+    <h2 class="section-title neon-blue">My Work</h2>
     <div class="grid">
-      <!-- Repeat cards for each project -->
       <div class="card">
-        <div class="icon">📈</div>
+        <div class="icon">📊</div>
         <h3>Paid Media</h3>
-        <p>Digital brand, product & performance marketing</p>
+        <p>Brand, product & performance marketing</p>
         <div class="tags"><span>Meta</span><span>Google</span><span>TikTok</span></div>
       </div>
-      <!-- Add other cards similarly... -->
+      <div class="card">
+        <div class="icon">🛒</div>
+        <h3>E‑Commerce</h3>
+        <p>Build, test, optimize, grow</p>
+        <div class="tags"><span>Shopify</span><span>CRO</span><span>Analytics</span></div>
+      </div>
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Brand Strategy</h3>
+        <p>Data + creativity + experience</p>
+        <div class="tags"><span>Positioning</span><span>Messaging</span><span>Identity</span></div>
+      </div>
+      <!-- Additional cards... -->
     </div>
   </section>
 
-  <div class="pixel-dot"></div>
-
   <section id="skills">
-    <h2 class="section-title neon">Skills & Expertise</h2>
-    <!-- Bars could be added here -->
-    <p style="text-align:center;">[Skill bars placeholder]</p>
+    <h2 class="section-title neon-blue">Skills & Expertise</h2>
+    <div class="skill" style="--pct:90%">
+      <div class="skill-label"><span>Full‑Funnel Marketing</span><span>90%</span></div>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+    <div class="skill" style="--pct:85%">
+      <div class="skill-label"><span>Lifecycle Marketing</span><span>85%</span></div>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+    <div class="skill" style="--pct:75%">
+      <div class="skill-label"><span>E‑Commerce Growth</span><span>75%</span></div>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
+    <div class="skill" style="--pct:70%">
+      <div class="skill-label"><span>Brand Strategy</span><span>70%</span></div>
+      <div class="bar-bg"><div class="bar-fill"></div></div>
+    </div>
   </section>
 
   <section id="testimonials">
-    <h2 class="section-title neon">Testimonials</h2>
-    <p style="text-align:center;">[Testimonial cards placeholder]</p>
+    <h2 class="section-title neon-blue">Testimonials</h2>
+    <div class="grid">
+      <div class="card neon-pink">
+        <p>“Steve’s attention to detail and creative problem-solving gave us a gaming interface that exceeded expectations.”</p>
+        <div class="author"><span class="avatar"></span>Sarah Johnson, Product Manager @ RetroPlay</div>
+      </div>
+      <div class="card neon-blue">
+        <p>“His blend of retro aesthetics with modern UX perfectly captured our brand identity.”</p>
+        <div class="author"><span class="avatar"></span>Alex Rodriguez, CEO @ NeonDreams</div>
+      </div>
+      <!-- More testimonials... -->
+    </div>
   </section>
 
   <section id="contact">
-    <h2 class="section-title neon">Get in Touch</h2>
-    <div class="contact-grid">
+    <h2 class="section-title neon-blue">Get in Touch</h2>
+    <div class="grid">
       <form>
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
-        <textarea rows="5" placeholder="Tell me about your project..."></textarea>
+        <textarea rows="6" placeholder="Tell me about your project..."></textarea>
         <button type="submit">Send Message</button>
       </form>
       <div>
@@ -197,13 +207,12 @@
         <p>Phone: 206.353.5329</p>
         <p>Location: Seattle, WA</p>
         <h3 class="neon-pink">Follow Me</h3>
-        <p>[Social icons]</p>
+        <p>[🎮 🎥 👾 💬]</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Steve Neff. All rights reserved.</p>
-  </footer>
+  <div class="pixel-dot"></div>
+  <footer>&copy; 2025 Steve Neff. All Rights Reserved.</footer>
 </body>
 </html>
