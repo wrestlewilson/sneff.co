@@ -29,22 +29,24 @@ body {
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, #9F2305, #3066A3);
   color: white;
-  position: relative;
   overflow-x: hidden;
+  position: relative;
 }
 
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px),
-                    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px);
+  width: 100vw;
+  height: 100vh;
+  background-image: 
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: 0;
   animation: moveGrid 60s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes moveGrid {
@@ -59,7 +61,7 @@ body::before {
 section {
   position: relative;
   z-index: 1;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
 }
 
 /* Navigation */
