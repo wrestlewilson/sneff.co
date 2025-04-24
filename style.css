@@ -1007,7 +1007,7 @@ nav {
 
 /* Section Titles */
 .section-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', cursive !important;
   font-size: 1.25rem;
   text-align: center;
   color: #fff;
