@@ -694,4 +694,65 @@ body {
 
 .to-pink-500 {
   --end-color: #ec4899;
+}
+
+/* Testimonials Section */
+.bg-\[\#1e1e2f\] {
+  background-color: #1e1e2f;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-pink-500 {
+  border-color: #ec4899;
+}
+
+.border-blue-500 {
+  border-color: #3b82f6;
+}
+
+.border-purple-500 {
+  border-color: #8b5cf6;
+}
+
+.border-yellow-400 {
+  border-color: #fbbf24;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-pink-400 {
+  color: #f472b6;
+}
+
+.text-blue-400 {
+  color: #60a5fa;
+}
+
+.text-purple-400 {
+  color: #c084fc;
+}
+
+.text-yellow-300 {
+  color: #fde047;
 } 
