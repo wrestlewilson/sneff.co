@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steve Neff Portfolio</title>
+    <meta name="description" content="Steve Neff's synthwave 8-bit inspired portfolio. Strategic brand growth meets vaporwave visuals.">
+    <meta property="og:title" content="Steve Neff | Synthwave Portfolio">
+    <meta property="og:image" content="https://sneff.co/assets/screenshot.png">
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="assets/css/synthwave.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- Smooth Scroll -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+
+    <!-- Animations & Effects -->
+    <style>
+      .fade-in {
+        animation: fadeIn 1.2s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .neon-glow {
+        text-shadow:
+          0 0 5px #fff,
+          0 0 10px #cc5500,
+          0 0 20px #cc5500;
+      }
+
+      .glitch-hover:hover {
+        transform: translate(1px, -1px);
+        text-shadow: 2px 2px #4e5a87, -2px -2px #cc5500;
+        transition: all 0.2s;
+      }
+    </style>
 </head>
 <body>
     <nav class="fixed top-0 left-0 w-full z-50 bg-[#0d0d0d]/80 backdrop-blur-lg border-b border-[#222]">
