@@ -3,190 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNEFF - Synthwave Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/synthwave.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
+    <title>Sneff.co - Developer Portfolio</title>
+    <style>
+        /* --- Basic Reset & Defaults --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif; /* Choose a modern font */
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Light background example */
+            color: #333;
+            /* Consider Dark Mode implementation later [14, 1, 16] */
+        }
+
+        /* --- Layout Structure (Grid Example) --- */
+       .site-wrapper {
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header, Main Content, Footer */
+            min-height: 100vh;
+            gap: 20px; /* Consistent gap between major sections [1, 3, 7, 8, 25, 4] */
+            padding: 20px; /* Outer padding for the whole site [8, 9, 10] */
+        }
+
+        /* --- Header & Navigation (Flexbox Example) --- */
+       .site-header {
+            display: flex;
+            justify-content: space-between; /* Space out logo and nav */
+            align-items: center;
+            padding: 10px 0; /* Internal vertical padding [8, 9, 10] */
+            border-bottom: 1px solid #ddd;
+        }
+
+       .site-header.logo {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+       .main-nav ul {
+            list-style: none;
+            display: flex; /* Arrange nav items horizontally [3, 7, 4, 5] */
+            gap: 15px; /* Space between nav items [1, 3, 7, 8, 25, 4] */
+        }
+
+       .main-nav a {
+            text-decoration: none;
+            color: #007bff;
+            padding: 5px 10px; /* Padding for clickable area [8, 9, 10] */
+            transition: color 0.3s ease, background-color 0.3s ease; /* Subtle hover animation [15, 16, 4] */
+        }
+
+       .main-nav a:hover,
+       .main-nav a:focus { /* Ensure focus styles for accessibility [1] */
+            color: #0056b3;
+            background-color: #e9ecef;
+            outline: 2px solid #007bff; /* Basic focus indicator */
+        }
+
+        /* --- Main Content Area --- */
+        main {
+            /* Grid handles positioning, add specific styles if needed */
+        }
+
+        /* --- Project Section (Grid for Cartridges) --- */
+       .projects-section {
+            padding: 40px 0; /* Vertical spacing [8, 9, 10] */
+        }
+
+       .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid [3, 4, 5] */
+            gap: 30px; /* Space between cartridges [1, 3, 7, 8, 25, 4] */
+        }
+
+        /* --- Simple Cartridge Visual Example --- */
+       .game-cartridge {
+            background-color: #555; /* Cartridge body color */
+            border: 3px solid #333;
+            border-radius: 8px 8px 0 0;
+            padding: 10px; /* Space inside cartridge [8, 9, 10] */
+            aspect-ratio: 3 / 4; /* Maintain shape */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative; /* For potential absolute positioning inside */
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation [15, 16, 4] */
+            /* Add ARIA roles/attributes for accessibility */
+        }
+
+       .game-cartridge:hover,
+       .game-cartridge:focus {
+            transform: translateY(-5px); /* Subtle lift effect [10, 16] */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+            outline: 2px solid #007bff; /* Focus indicator */
+        }
+
+       .cartridge-label {
+            background-color: #eee; /* Label background */
+            padding: 15px 10px; /* Label internal spacing [8, 9, 10] */
+            text-align: center;
+            border: 2px solid #ccc;
+            margin-bottom: 10px; /* Space below label [8, 9, 10] */
+        }
+
+       .cartridge-label h3 {
+            font-size: 1em;
+            margin: 0; /* Reset heading margin */
+            color: #333;
+        }
+
+       .cartridge-details { /* Hidden by default, shown on interaction */
+            display: none;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            /* Add animation for reveal */
+        }
+
+        /* --- Footer --- */
+       .site-footer {
+            text-align: center;
+            padding: 20px 0; /* Internal vertical padding [8, 9, 10] */
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* --- Accessibility --- */
+        /* Add styles for prefers-reduced-motion media query [1, 15] */
+        @media (prefers-reduced-motion: reduce) {
+         .game-cartridge:hover,
+         .game-cartridge:focus {
+            transform: none;
+            box-shadow: none;
+          }
+         .main-nav a {
+            transition: none;
+          }
+          /* Disable other animations */
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Grid Background -->
-    <div class="grid-background"></div>
-    
-    <!-- Scanlines Effect -->
-    <div class="scanlines"></div>
-    
-    <!-- Main Content -->
-    <main>
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <div class="nav-container">
-                <a href="#" class="logo">SNEFF</a>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </nav>
+    <div class="site-wrapper">
+        <header class="site-header">
+            <div class="logo">Sneff.co</div>
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    </ul>
+            </nav>
+        </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="glitch-text pixel-text">
-                    <span class="pixel-char">S</span>
-                    <span class="pixel-char">t</span>
-                    <span class="pixel-char">e</span>
-                    <span class="pixel-char">v</span>
-                    <span class="pixel-char">e</span>
-                    <span class="pixel-char">&nbsp;</span>
-                    <span class="pixel-char">N</span>
-                    <span class="pixel-char">e</span>
-                    <span class="pixel-char">f</span>
-                    <span class="pixel-char">f</span>
-                </h1>
-                <p class="subtitle pixel-text delayed">
-                    <span class="pixel-char">V</span>
-                    <span class="pixel-char">P</span>
-                    <span class="pixel-char">&nbsp;</span>
-                    <span class="pixel-char">o</span>
-                    <span class="pixel-char">f</span>
-                    <span class="pixel-char">&nbsp;</span>
-                    <span class="pixel-char">D</span>
-                    <span class="pixel-char">i</span>
-                    <span class="pixel-char">g</span>
-                    <span class="pixel-char">i</span>
-                    <span class="pixel-char">t</span>
-                    <span class="pixel-char">a</span>
-                    <span class="pixel-char">l</span>
-                </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-        </section>
+        <main>
+            <section id="hero" aria-labelledby="hero-heading">
+                <h1 id="hero-heading">Welcome to Sneff.co</h1>
+                <p>Showcasing awesome projects.</p>
+                </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-card">
-                        <p>I'm a passionate developer with a love for retro aesthetics and modern technology. My journey in tech has led me through various domains, from web development to digital art creation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">About Me</h2>
+                <p>Introduce yourself here. Add personality! [16, 26, 27, 28]</p>
+            </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
+            <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Projects</h2>
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image"></div>
-                        <h3>Project One</h3>
-                        <p>Description of your amazing project goes here.</p>
-                        <a href="#" class="btn btn-small">View Project</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image"></div>
-                        <h3>Project Two</h3>
-                        <p>Another incredible project description.</p>
-                        <a href="#" class="btn btn-small">View Project</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image"></div>
-                        <h3>Project Three</h3>
-                        <p>Yet another fantastic project showcase.</p>
-                        <a href="#" class="btn btn-small">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Frontend</h3>
-                        <ul>
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>React.js</li>
-                            <li>Vue.js</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Backend</h3>
-                        <ul>
-                            <li>Node.js</li>
-                            <li>Python</li>
-                            <li>PHP</li>
-                            <li>SQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Tools</h3>
-                        <ul>
-                            <li>Git</li>
-                            <li>Docker</li>
-                            <li>AWS</li>
-                            <li>Figma</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-content">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                    <div class="game-cartridge" tabindex="0" aria-label="Project Title 1 - Click for details">
+                        <div class="cartridge-label">
+                            <h3>Project Title 1</h3>
+                            </div>
+                        <div class="cartridge-details">
+                            <h4>Project Title 1</h4>
+                            <p>Detailed description goes here. Explain goals, process, challenges, results.[27, 29, 28]</p>
+                            <a href="#">View Project</a>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+                    </div>
 
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 SNEFF. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link">GitHub</a>
-                    <a href="#" class="social-link">LinkedIn</a>
-                    <a href="#" class="social-link">Twitter</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+                    <div class="game-cartridge" tabindex="0" aria-label="Project Title 2 - Click for details">
+                         <div class="cartridge-label">
+                            <h3>Project Title 2</h3>
+                        </div>
+                         <div class="cartridge-details">
+                            <h4>Project Title 2</h4>
+                            <p>Detailed description.</p>
+                            <a href="#">View Project</a>
+                        </div>
+                    </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+                    </div>
+            </section>
+
+            <section id="contact" aria-labelledby="contact-heading">
+                 <h2 id="contact-heading">Contact</h2>
+                 <p>Add contact form or details here.</p>
+                 </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 Sneff.co. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- JavaScript for Interactivity ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartridges = document.querySelectorAll('.game-cartridge');
+
+            cartridges.forEach(cartridge => {
+                // Basic click listener example to toggle details visibility
+                // More complex animations (e.g., 'insert' effect, smooth reveals)
+                // would be implemented here using CSS classes toggled by JS,
+                // or preferably an animation library like GSAP or Motion.[21, 22, 23, 24]
+
+                const details = cartridge.querySelector('.cartridge-details');
+
+                const showDetails = () => {
+                    if (details) details.style.display = 'block';
+                    // Add animation class here
+                };
+
+                const hideDetails = () => {
+                     if (details) details.style.display = 'none';
+                     // Remove animation class here
+                };
+
+                // Example: Show on click, hide on mouseleave (simple interaction)
+                cartridge.addEventListener('click', showDetails);
+                cartridge.addEventListener('keydown', (event) => {
+                    if (event.key === 'Enter' |
+| event.key === ' ') {
+                        showDetails();
+                    }
+                });
+
+                // Add logic to hide details (e.g., clicking outside, a close button)
+                // For simplicity, hiding on mouseleave here:
+                cartridge.addEventListener('mouseleave', hideDetails);
+
+
+                // Placeholder for more advanced animation library integration:
+                // Example using a hypothetical GSAP setup:
+                // const tl = gsap.timeline({ paused: true });
+                // tl.to(details, { opacity: 1, y: 0, duration: 0.5 }); // Example reveal animation
+                // cartridge.addEventListener('click', () => tl.play());
+                // Add logic to reverse/reset animation
+            });
+
+            // Add other JS for smooth scrolling, form handling, etc.
+        });
+    </script>
 </body>
-</html> 
+</html>
