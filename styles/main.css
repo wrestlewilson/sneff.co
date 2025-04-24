@@ -35,22 +35,52 @@ body {
 /* Navigation */
 nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #222;
 }
 
-nav a {
-  margin-left: 2rem;
-  text-decoration: none;
+.logo {
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1rem;
   color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #ec4899;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
   font-family: 'Press Start 2P', sans-serif;
   font-size: 0.8rem;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-nav a:first-child {
-  margin-left: 0;
-  margin-right: auto; /* Pushes the rest of the nav to the right */
+.nav-links a:hover {
+  color: #ec4899;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }
 
 .fixed {
@@ -138,22 +168,6 @@ nav a:first-child {
   transition-property: color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
-}
-
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(26, 11, 46, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid var(--neon-cyan);
-  box-shadow: 0 0 20px var(--neon-cyan);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .nav-logo {
@@ -285,10 +299,6 @@ nav a:first-child {
   
   .nav {
     padding: 1rem;
-  }
-  
-  .nav-links {
-    display: none;
   }
   
   .hero-content {
