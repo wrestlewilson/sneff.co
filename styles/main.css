@@ -755,4 +755,89 @@ body {
 
 .text-yellow-300 {
   color: #fde047;
+}
+
+/* Contact Section */
+.bg-\[\#0d0d0d\] {
+  background-color: #0d0d0d;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.text-gray-300 {
+  color: #d1d5db;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.bg-\[\#1f1f2e\] {
+  background-color: #1f1f2e;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.focus\:outline-none:focus {
+  outline: none;
+}
+
+.focus\:ring-2:focus {
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.focus\:ring-pink-500:focus {
+  --ring-color: #ec4899;
+}
+
+.focus\:ring-blue-500:focus {
+  --ring-color: #3b82f6;
+}
+
+.focus\:ring-purple-500:focus {
+  --ring-color: #8b5cf6;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.via-purple-500 {
+  --via-color: #8b5cf6;
+}
+
+.hover\:opacity-90:hover {
+  opacity: 0.9;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.space-x-6 > * + * {
+  margin-left: 1.5rem;
+}
+
+.hover\:text-pink-600:hover {
+  color: #db2777;
+}
+
+.hover\:text-blue-600:hover {
+  color: #2563eb;
+}
+
+.hover\:text-purple-600:hover {
+  color: #9333ea;
 } 
