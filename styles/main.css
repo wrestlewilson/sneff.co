@@ -976,14 +976,10 @@ nav {
 /* Section Titles */
 .section-title {
   font-family: 'Press Start 2P', sans-serif;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
   margin-bottom: 2rem;
-  text-shadow: 
-    0 0 5px #fff,
-    0 0 10px #cc5500,
-    0 0 20px #cc5500;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
