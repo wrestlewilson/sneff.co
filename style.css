@@ -38,33 +38,20 @@ body {
   overflow-x: hidden;
 }
 
-/* Step 2: Grid overlay across the whole site */
+/* Step 2: Static grid overlay across the whole site */
 body::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
+  width: 100%;
+  height: 100%;
   background-image: 
-    linear-gradient(to right, rgba(255, 0, 255, 0.3) 3px, transparent 3px),
-    linear-gradient(to bottom, rgba(255, 0, 255, 0.3) 3px, transparent 3px);
+    linear-gradient(to right, rgba(139, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 40px 40px;
   z-index: 0;
   pointer-events: none;
-  animation: gridMove 30s linear infinite;
-  filter: drop-shadow(0 0 8px rgba(255, 0, 255, 0.5))
-         drop-shadow(0 0 16px rgba(255, 0, 255, 0.3));
-}
-
-/* Animate the grid */
-@keyframes gridMove {
-  from {
-    transform: translate(0, 0);
-  }
-  to {
-    transform: translate(-40px, -40px);
-  }
 }
 
 /* Step 3: Make all sections transparent */
