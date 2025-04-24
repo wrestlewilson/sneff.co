@@ -212,4 +212,59 @@
         </main>
 
         <footer class="site-footer">
-            <p
+            <p>&copy; 2025 Sneff.co. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // --- JavaScript for Interactivity ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartridges = document.querySelectorAll('.game-cartridge');
+
+            cartridges.forEach(cartridge => {
+                // Basic click listener example to toggle details visibility
+                // More complex animations (e.g., 'insert' effect, smooth reveals)
+                // would be implemented here using CSS classes toggled by JS,
+                // or preferably an animation library like GSAP or Motion.[15, 16, 17, 18]
+
+                const details = cartridge.querySelector('.cartridge-details');
+
+                const showDetails = () => {
+                    if (details) details.style.display = 'block';
+                    // Add animation class here
+                };
+
+                const hideDetails = () => {
+                     if (details) details.style.display = 'none';
+                     // Remove animation class here
+                };
+
+                // Example: Show on click, hide on mouseleave (simple interaction)
+                cartridge.addEventListener('click', showDetails);
+                cartridge.addEventListener('keydown', (event) => {
+                    // Corrected the OR operator here
+                    if (event.key === 'Enter' |
+| event.key === ' ') {
+                        showDetails();
+                    }
+                });
+
+                // Add logic to hide details (e.g., clicking outside, a close button)
+                // For simplicity, hiding on mouseleave here:
+                cartridge.addEventListener('mouseleave', hideDetails);
+
+
+                // Placeholder for more advanced animation library integration:
+                // Example using a hypothetical GSAP setup:
+                // const tl = gsap.timeline({ paused: true });
+                // tl.to(details, { opacity: 1, y: 0, duration: 0.5 }); // Example reveal animation
+                // cartridge.addEventListener('click', () => tl.play());
+                // Add logic to reverse/reset animation
+            });
+
+            // Add other JS for smooth scrolling, form handling, etc.
+        });
+    </script>
+</body>
+</html>
