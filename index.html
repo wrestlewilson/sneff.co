@@ -3,174 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SNEFF - Synthwave Portfolio</title>
+    <title>Steve Neff | Portfolio</title>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="assets/css/synthwave.css">
     <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
-    <!-- Grid Background -->
-    <div class="grid-background"></div>
-    
-    <!-- Scanlines Effect -->
-    <div class="scanlines"></div>
-    
-    <!-- Main Content -->
-    <main>
-        <!-- Navigation -->
-        <nav class="main-nav">
-            <div class="nav-container">
-                <a href="#" class="logo">SNEFF</a>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
+    <header class="nav">
+        <div class="nav-left">
+            <a href="/" class="site-title">Sneff.co</a>
+        </div>
+        <nav class="nav-right">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
+    </header>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="glitch-text pixel-text">
-                    <span class="pixel-char">S</span>
-                    <span class="pixel-char">t</span>
-                    <span class="pixel-char">e</span>
-                    <span class="pixel-char">v</span>
-                    <span class="pixel-char">e</span>
-                    <span class="pixel-char">&nbsp;</span>
-                    <span class="pixel-char">N</span>
-                    <span class="pixel-char">e</span>
-                    <span class="pixel-char">f</span>
-                    <span class="pixel-char">f</span>
-                </h1>
-                <p class="subtitle pixel-text delayed">
-                    <span class="pixel-char">V</span>
-                    <span class="pixel-char">P</span>
-                    <span class="pixel-char">&nbsp;</span>
-                    <span class="pixel-char">o</span>
-                    <span class="pixel-char">f</span>
-                    <span class="pixel-char">&nbsp;</span>
-                    <span class="pixel-char">D</span>
-                    <span class="pixel-char">i</span>
-                    <span class="pixel-char">g</span>
-                    <span class="pixel-char">i</span>
-                    <span class="pixel-char">t</span>
-                    <span class="pixel-char">a</span>
-                    <span class="pixel-char">l</span>
-                </p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Steve Neff</h1>
+            <p>Brand strategist meets digital futurist</p>
+            <div class="hero-buttons">
+                <a href="#work" class="btn btn-purple">View Work</a>
+                <a href="#contact" class="btn btn-orange">Contact Me</a>
+            </div>
+        </div>
+        <div class="grid-overlay"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <p>I'm a passionate developer with a love for retro aesthetics and modern technology. My journey in tech has led me through various domains, from web development to digital art creation.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-card">
-                        <p>I'm a passionate developer with a love for retro aesthetics and modern technology. My journey in tech has led me through various domains, from web development to digital art creation.</p>
-                    </div>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>Project One</h3>
+                    <p>Description of your amazing project goes here.</p>
+                    <a href="#" class="btn btn-small">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>Project Two</h3>
+                    <p>Another incredible project description.</p>
+                    <a href="#" class="btn btn-small">View Project</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>Project Three</h3>
+                    <p>Yet another fantastic project showcase.</p>
+                    <a href="#" class="btn btn-small">View Project</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-image"></div>
-                        <h3>Project One</h3>
-                        <p>Description of your amazing project goes here.</p>
-                        <a href="#" class="btn btn-small">View Project</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image"></div>
-                        <h3>Project Two</h3>
-                        <p>Another incredible project description.</p>
-                        <a href="#" class="btn btn-small">View Project</a>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image"></div>
-                        <h3>Project Three</h3>
-                        <p>Yet another fantastic project showcase.</p>
-                        <a href="#" class="btn btn-small">View Project</a>
-                    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Vue.js</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>PHP</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Figma</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Frontend</h3>
-                        <ul>
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>React.js</li>
-                            <li>Vue.js</li>
-                        </ul>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-content">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
                     </div>
-                    <div class="skill-card">
-                        <h3>Backend</h3>
-                        <ul>
-                            <li>Node.js</li>
-                            <li>Python</li>
-                            <li>PHP</li>
-                            <li>SQL</li>
-                        </ul>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
                     </div>
-                    <div class="skill-card">
-                        <h3>Tools</h3>
-                        <ul>
-                            <li>Git</li>
-                            <li>Docker</li>
-                            <li>AWS</li>
-                            <li>Figma</li>
-                        </ul>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-content">
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="main-footer">
