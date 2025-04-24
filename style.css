@@ -1031,4 +1031,129 @@ nav {
   .section-title {
     font-size: 1.5rem;
   }
+}
+
+/* Utility Classes */
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+}
+
+.md\:text-7xl {
+  @media (min-width: 768px) {
+    font-size: 4.5rem;
+  }
+}
+
+.font-press-start {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.drop-shadow-lg {
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.md\:text-2xl {
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.font-roboto-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.space-x-6 > * + * {
+  margin-left: 1.5rem;
+}
+
+.bg-pink-500 {
+  background-color: #ec4899;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.hover\:bg-pink-600:hover {
+  background-color: #db2777;
+}
+
+.hover\:bg-blue-600:hover {
+  background-color: #2563eb;
+}
+
+.transition {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 } 
