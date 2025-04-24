@@ -840,4 +840,25 @@ body {
 
 .hover\:text-purple-600:hover {
   color: #9333ea;
+}
+
+/* Footer */
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-\[\#222\] {
+  border-color: #222;
+}
+
+.text-gray-500 {
+  color: #6b7280;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+}
+
+.text-xs {
+  font-size: 0.75rem;
 } 
