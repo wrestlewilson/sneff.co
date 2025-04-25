@@ -77,13 +77,8 @@
 
 /* Neon Text Effects */
 .glitch-text {
-    color: var(--neon-cyan);
-    text-shadow: 
-        0 0 5px var(--neon-cyan),
-        0 0 10px var(--neon-cyan),
-        0 0 20px var(--neon-cyan),
-        0 0 40px var(--neon-cyan);
-    animation: glitch 0.3s infinite;
+    color: var(--text);
+    text-shadow: none;
 }
 
 .section-title {
@@ -259,27 +254,6 @@ textarea:focus {
     }
 }
 
-@keyframes glitch {
-    0% {
-        transform: translate(0);
-    }
-    20% {
-        transform: translate(-2px, 2px);
-    }
-    40% {
-        transform: translate(-2px, -2px);
-    }
-    60% {
-        transform: translate(2px, 2px);
-    }
-    80% {
-        transform: translate(2px, -2px);
-    }
-    100% {
-        transform: translate(0);
-    }
-}
-
 /* Sun/Moon Effect */
 .sun {
     position: fixed;
@@ -351,7 +325,7 @@ textarea:focus {
         0 0 20px var(--neon-cyan);
 }
 
-/* Monitor Glitch Effects */
+/* Monitor Effect */
 .monitor-effect {
     position: relative;
     background: rgba(26, 11, 46, 0.9);
@@ -361,16 +335,15 @@ textarea:focus {
     overflow: hidden;
     box-shadow: 
         0 0 5px var(--neon-cyan),
-        0 0 10px var(--neon-cyan),
-        0 0 20px var(--neon-cyan);
+        0 0 10px var(--neon-cyan);
     transition: all 0.3s ease;
 }
 
 .monitor-effect:hover {
+    transform: scale(1.02);
     box-shadow: 
         0 0 10px var(--neon-cyan),
-        0 0 20px var(--neon-cyan),
-        0 0 30px var(--neon-cyan);
+        0 0 20px var(--neon-cyan);
 }
 
 .monitor-effect::before {
@@ -379,54 +352,38 @@ textarea:focus {
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
-    background: linear-gradient(
-        90deg,
-        var(--neon-cyan),
-        var(--neon-magenta),
-        var(--neon-cyan)
-    );
-    animation: monitor-scan 3s linear infinite;
+    height: 3px;
+    background: var(--neon-cyan);
     opacity: 0.5;
-    box-shadow: 0 0 15px var(--neon-cyan);
 }
 
-.monitor-effect::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        rgba(26, 11, 46, 0) 50%,
-        rgba(26, 11, 46, 0.025) 50%
-    );
-    background-size: 100% 4px;
-    animation: monitor-lines 0.2s linear infinite;
-    pointer-events: none;
-}
-
+/* Remove all glitch-related animations and effects */
+.glitch-text,
 .glitch-text-content {
-    text-shadow: 
-        0 0 5px var(--neon-cyan),
-        0 0 10px var(--neon-cyan);
+    color: var(--text);
+    text-shadow: none;
 }
 
+/* Remove monitor scan lines animation */
+.monitor-effect::after {
+    display: none;
+}
+
+/* Remove monitor scan animation keyframes */
 @keyframes monitor-scan {
     0% {
-        transform: translateY(-100%);
+        transform: none;
     }
     100% {
-        transform: translateY(2000%);
+        transform: none;
     }
 }
 
 @keyframes monitor-lines {
     0% {
-        background-position: 0 0;
+        background-position: none;
     }
     100% {
-        background-position: 0 4px;
+        background-position: none;
     }
 } 
