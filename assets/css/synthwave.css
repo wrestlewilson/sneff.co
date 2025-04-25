@@ -1,3 +1,19 @@
+/* Variables */
+:root {
+    /* Colors */
+    --primary: #b829ff;
+    --secondary: #00ffff;
+    --background: #1a0b2e;
+    --text: #ffffff;
+    --grid-color: rgba(128, 0, 255, 0.15);
+    --glow: rgba(184, 41, 255, 0.5);
+    --neon-cyan: #0ff;
+    --neon-magenta: #f0f;
+    --neon-pink: #ff00ff;
+    --neon-purple: #8b5cf6;
+    --neon-blue: #00ffff;
+}
+
 /* Grid Background */
 .grid-background::before {
     content: '';
@@ -99,7 +115,7 @@
 .section-line {
     width: 100%;
     height: 3px;
-    background: var(--neon-cyan);
+    background: var(--neon-pink);
     margin: 2rem 0;
     position: relative;
     overflow: hidden;
@@ -115,10 +131,17 @@
     background: linear-gradient(
         90deg,
         transparent,
-        var(--neon-cyan),
+        var(--neon-pink),
         transparent
     );
     animation: line-pulse 2s ease-in-out infinite;
+}
+
+.section-line.glow-box {
+    box-shadow: 
+        0 0 5px var(--neon-pink),
+        0 0 10px var(--neon-pink),
+        0 0 20px var(--neon-pink);
 }
 
 @keyframes line-pulse {
