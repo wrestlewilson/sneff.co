@@ -280,4 +280,12 @@ textarea:focus {
         width: 60px;
         height: 60px;
     }
+}
+
+/* Glow Effects */
+.glow-box {
+    box-shadow: 
+        0 0 5px var(--neon-cyan),
+        0 0 10px var(--neon-cyan),
+        0 0 20px var(--neon-cyan);
 } 
