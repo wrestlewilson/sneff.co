@@ -363,6 +363,14 @@ textarea:focus {
         0 0 5px var(--neon-cyan),
         0 0 10px var(--neon-cyan),
         0 0 20px var(--neon-cyan);
+    transition: all 0.3s ease;
+}
+
+.monitor-effect:hover {
+    box-shadow: 
+        0 0 10px var(--neon-cyan),
+        0 0 20px var(--neon-cyan),
+        0 0 30px var(--neon-cyan);
 }
 
 .monitor-effect::before {
