@@ -386,4 +386,19 @@ textarea:focus {
     100% {
         background-position: none;
     }
+}
+
+/* Miami Glow Effect for Testimonials */
+.miami-glow {
+    box-shadow: 
+        0 0 5px #ff6b97,
+        0 0 10px #ff6b97;
+    transition: all 0.3s ease;
+}
+
+.miami-glow:hover {
+    box-shadow: 
+        0 0 10px #ff6b97,
+        0 0 20px #ff6b97,
+        0 0 30px #ff6b97;
 } 
