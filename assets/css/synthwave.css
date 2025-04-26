@@ -401,4 +401,47 @@ textarea:focus {
         0 0 10px #ff6b97,
         0 0 20px #ff6b97,
         0 0 30px #ff6b97;
+}
+
+/* Retro Hero Glow Effect */
+.retro-glow {
+    color: #fff;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 40px #0ff,
+        0 0 80px #0ff,
+        0 0 120px #0ff,
+        0 0 160px #0ff;
+    animation: pulsate 2s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+    0% {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 40px #0ff,
+            0 0 80px #0ff,
+            0 0 120px #0ff,
+            0 0 160px #0ff;
+    }
+    50% {
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #0ff,
+            0 0 40px #0ff,
+            0 0 80px #0ff,
+            0 0 120px #0ff;
+    }
+    100% {
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 40px #0ff,
+            0 0 80px #0ff,
+            0 0 120px #0ff,
+            0 0 160px #0ff;
+    }
 } 
